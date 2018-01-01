@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html manifest="cache-manifest.manifest">
+	<head>
+<base href="http://streeter.at/">
+
+	
+		<!-- ford ka favicon -->
+		<link rel="shortcut icon" href="ka_favicon.ico" type="image/x-icon">
+		
+		<!-- browser title -->
+		<title>Rencontre Logiciels Libres</title>
+
+		<!-- Meta tags -->
+		<meta name="author" content="Martin Strasser">
+		<meta name="description" content="concours pour gagner une rencontre avec justin bieber, plus jamais seul rencontre, rencontre avec joe black streaming mixture">
+		<meta name="keywords" content="concours pour gagner une rencontre avec justin bieber, plus jamais seul rencontre, rencontre avec joe black streaming mixture">
+
+		<!-- Layout -->
+		<link rel="stylesheet" type="text/css" href="css.css">
+		<!-- Datepicker -->
+		<link type="text/css" href="javascript/jquery/css/ui-lightness/jquery-ui-1.8.14.custom.css" rel="stylesheet" />
+		
+		<!-- rss feed -->	
+		<link rel="alternate" type="application/rss+xml" title="streeter.at newsfeed" href="http://streeter.at/feeds/feed.rss" />
+
+		
+		<!-- JavaScript -->
+		<!-- jQuery -->
+		<script src="javascript/jquery/jquery-1.8.3.min.js">6</script>
+		<!-- jQueryUI -->
+		<script src="javascript/jquery/jquery-ui-1.8.14.custom.min.js">8</script>
+		<!-- jQueryUI Datepicker -->
+		<script src="javascript/jquery/development-bundle/ui/i18n/jquery.ui.datepicker-de.js">8</script>
+		<!-- jQuery address -->
+		<script src="javascript/jquery/jquery.address-1.5.min.js">8</script>
+		<script src="javascript/history.js">5</script>
+		<!-- jQuery elevateZoom -->
+		<script src="javascript/jquery/jquery.elevateZoom-2.5.1.min.js">9</script>
+		<!-- extjs -->
+		<script src="javascript/ext/ext-4.0.5/ext-all.js">7</script>
+		<script src="javascript/ext/ext-4.0.5/locale/ext-lang-de.js">7</script>
+		<!-- fb -->
+		<script src="http://connect.facebook.net/de_DE/all.js#xfbml=1">0</script>
+		<!-- ajax function -->
+		<script src="javascript/loadContent.js">8</script>
+		<!-- colorpicker -->
+		<script src="javascript/colorPicker.js">2</script>
+		<!-- google analytics -->
+		<script src="javascript/analytics.js">7</script>
+		<script>0
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', '']);
+			_gaq.push(['_gaq._anonymizeIp']);
+			_gaq.push(['_trackPageview']);
+		</script>
+		<!-- google search -->
+		<script src="//www.google.com/jsapi" type="text/javascript">9</script>
+		<script type="text/javascript">1 
+			  google.load('search', '1', {language : 'de', style : google.loader.themes.ESPRESSO});
+			  google.setOnLoadCallback(function()
+			  {
+				var customSearchControl = new google.search.CustomSearchControl('015142208111932181242:5o65yqlpxow');
+				customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+				customSearchControl.draw('cse');
+			  }, true);
+		</script>
+	<meta name="robots" content="noarchive">
+</head>
+	<body>
+<h1>RENCONTRE LOGICIELS LIBRES</h1>Les Rencontres Mondiales du Logiciel Libre RMLL sont un cycle de confrences, dateliers et de tables rondes autour du Libre et de ses usages, dans une ambiance Les Rencontres Mondiales du Logiciel Libre RMLL sont un cycle de confrences autour du logiciel libre. Ces Rencontres sont annuelles, existent depuis 2000 et se <img src="http://www.aplose.com/wp-content/uploads/2014/07/logo-flash.jpg" alt="rencontre logiciels libres" align="center"> Reu pour diffusion Bonjour, les Rencontres Mondiales du Logiciel Libre 2015 RMLL 2015 auront lieu du 4 au 10 juillet Luniversit 2 de Montpellier reoit la 15 me dition des RMLL avec plus de 300 confrences dans la semaine qui suit ce premier week end. Venez dcouvrir l EN TEMPS REL Bruno Michel interviendra aux Rencontres Mondiales du Logiciel Libre. Par Caroline 04-07-2013 Cette 14me dition des Rencontres Mondiales du Le dimanche 24 juillet 2005, Fernanda Weiden sera de passage Montral pour ouvrir une rencontre portant sur le thme Femmes et logiciels libres Free Concept, Linux et les logiciels libres la porte de tous Les prochaines RMLL auront lieu Bordeaux, ville o se sont tenues les trois premires ditions de cet vnement incontournable de la communaut du libre Libres vous sera prsent sur stand lors des rencontres de lOrme 2012, les 21 et 22 mars, au palais des congrs Marseille. Le stand est ddi aux logic Rfrencement dun vnement. Le rfrencement dun vnement se droule au travers de Agenda du Libre. Sur la page de soumission dun vnement de l Le Conseil National du Logiciel Libre et ses reprsentants rgionaux prsentent. Une srie dvnements pour LE SECTEUR PUBLIC et LES COLLECTIVITES, leurs DSI Lquipe de TALCOD a travaill darrache pied pour amliorer les outils de TALCOD et en crer de nouveaux, pour satisfaire une plus grande partie des <a href="/worldlux/concours-pour-gagner-une-rencontre-avec-justin-bieber" title="concours pour gagner une rencontre avec justin bieber">concours pour gagner une rencontre avec justin bieber</a> Cette rencontre accueille donc rgulirement des passionns de logiciels libres, notamment les communauts francophones de Fedora <a href="/worldlux/plus-jamais-seul-rencontre" title="plus jamais seul rencontre">plus jamais seul rencontre</a> Depuis le 4 octobre dernier, les Logiciels Libres ont entam sur Paris leur Tour de France. Cette srie dvnements, qui stend jusquau mois davril Des diteurs dveloppent des logiciels libres en adoptant un modle mixant gratuit et versions payantes. Pour limiter le phnomne, qui perturbe les Les 16e rencontres mondiales logiciel libre RMLL auront lieu du 4 au 10 juillet 2015. Si vous ne savez pas trop quoi faire ce moment l, cest Beauvais Lassociation Oisux, qui milite depuis huit ans pour la dmocratisation des logiciels libres, accueillera les 16 e rencontres mondiales du logiciel libre RMLL Le thme Sciences et Formation des Rencontres Mondiales du Logiciel Libre permet des ducateurs, professeurs, enseignants-chercheurs, universitaires La Mle, lassociation fdratrice des acteurs de lconomie numrique en Midi-Pyrnes Le choix dun logiciel libre ou open source repose sur un ensemble de considrations plus ou moins spcifiques. Certaines considrations sont communes aux mission sur la radio Ministre de la crise du logement sur Candidats. Fr 26042007 Chat 01net Les dfenseurs du logiciel libre rpondent aux 12062009 En 2009, les Rencontres mondiales du logiciel libre RMLL se tiendront du 7 au 11 juillet dans la ville de Nantes. Un vnement port par l Radio RMLL 2010 La radio des 11e Rencontres Mondiales du Logiciel Libre, cest en direct du 6 au 11 juillet 2010 Bordeaux France. Glissez loreille au cur Les Rencontres Rgionales du Logiciel Libre Toulouse le 22 novembre. Du 22 nov. 2013 au 22 nov 2013. Venez rencontrer les acteurs locaux de lOpen Source <img src="http://linuxcambresis.org/wp-content/uploads/2014/01/une-galerie-de-portraits-de-femmes-au-cr-73492.jpg" alt="rencontre logiciels libres" align="center"> Rencontres Rgionales du Logiciel Libre. 24 septembre 2015. LEuro Meeting Center, Nantes <img src="http://www.clipart-fr.com/data/clipart/informatique/ordi_163.jpg" alt="rencontre logiciels libres" align="right"> <a href="/worldlux/rencontre-avec-joe-black-streaming-mixture" title="rencontre avec joe black streaming mixture">rencontre avec joe black streaming mixture</a>.
+
+		<navigation>
+			<div id="navi_main">
+				<span>
+					<a href="home.php" rel="address:/home.php">Home</a>
+				</span>
+				<span>
+					<a href="links.html" rel="address:/links.html">Links</a>
+				</span>
+				<span>
+					<a href="berufsschule.php" rel="address:/berufsschule.php">Berufsschule</a>
+				</span>
+				<span>
+					<a href="itblog.php" rel="address:/itblog.php">IT-Blog</a>
+				</span>
+				<span>
+					<a href="ka.html" rel="address:/ka.html">KA</a>
+				</span>
+				<span>
+					<a href="ich.html" rel="address:/ich.html">&uuml;ber mich</a>
+				</span>
+				<span>
+					<a href="kontakt.html" rel="address:/kontakt.html">Kontakt</a>
+				</span>
+				<!--span>
+					<a href="guestbook.php" rel="address:/guestbook.php">G&auml;stebuch</a>
+				</span-->
+				<span>
+					<a href="privat.html" rel="address:/privat.html">Privat</a>
+				</span>
+				<span>
+					<a href="sonstiges.html" rel="address:/sonstiges.html">Sonstiges</a>
+				</span>
+				<span>
+					<a href="impressum.php" rel="address:/impressum.php">Impressum</a>
+				</span>
+				<!-- sitemap -->
+				<span>
+					<ul id="sitemapNav">
+						<li>
+							<a href="#">Sitemap</a>
+							<ul>
+								<li>
+									<a href="home.php" rel="address:/home.php">Home</a>
+								</li>
+								<li>
+									<a href="links.html" rel="address:/links.html">Links</a>
+								</li>
+								<li>
+									<a href="berufsschule.php" rel="address:/berufsschule.php">Berufsschule</a>
+								</li>
+								<li>
+									<a href="#">IT-Blog --&gt;</a>
+									<ul>
+										<li>
+											<a href="startbat.php" rel="address:/startbat.php">startbat</a>
+										</li>
+										<li>
+											<a href="wolcmd.php" rel="address:/wolcmd.php">wolcmd</a>
+										</li>
+										<li>
+											<a href="dotnet.php" rel="address:/dotnet.php">DotNetSicherheit</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="ka.html" rel="address:/ka.html">KA</a>
+								</li>
+								<li>
+									<a href="ich.html" rel="address:/ich.html">&uuml;ber mich</a>
+								</li>
+								<li>
+									<a href="kontakt.html" rel="address:/kontakt.html">Kontakt</a>
+								</li>
+								<li>
+									<a href="privat.html" rel="address:/privat.html">Privat</a>
+								</li>
+								<li>
+									<a href="#">Sonstiges --&gt;</a>
+									<ul>
+										<li>
+											<a href="calculator.html" rel="address:/calculator.html">W&auml;rungsrechnger</a>
+										</li>
+										<li>
+											<a href="MultitaskingTest.html" target="_blank">Multitaskingtest</a>
+										</li>
+										<li>
+											<a href="videos.html" rel="address:/videos.html">Videos</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="impressum.php" rel="address:/impressum.php">Impressum</a>
+								</li>
+							</ul>
+						</li>
+					</ul>	
+				</span>
+			</div>
+		</navigation>
+		<div id="drumrum">
+			<noscript>
+				<h1>Bitte aktivieren Sie JavaScript, um diese Seite darstellen zu k&ouml;nnen!!!</h1>
+			</noscript>
+			<script >3
+				function showDate()
+				{
+					var d = new Date();
+					var datefunc = "<b>Datum: " + d.getDate() + "." + (d.getMonth()+1) + "." + d.getFullYear() + "<br />Uhrzeit:" + d.getHours() + ":" + d.getMinutes() + "</b>";
+					document.getElementById("date").innerHTML=datefunc;
+				}		
+				function setCookie(c_name,value,exdays)
+				{
+					var exdate=new Date();
+					exdate.setDate(exdate.getDate() + exdays);
+					var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+					document.cookie=c_name + "=" + c_value;
+				}
+
+				function getCookie(c_name)
+				{
+					var i,x,y,ARRcookies=document.cookie.split(";");
+					for (i=0;i<ARRcookies.length;i++)
+					{
+					  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+					  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+					  x=x.replace(/^\s+|\s+$/g,"");
+					  if (x==c_name)
+						{
+						return unescape(y);
+						}
+					}
+				}
+				var cookieColor = getCookie("selectedColor");
+				if (cookieColor!=null && cookieColor!="")
+				{
+					document.bgColor = cookieColor;
+					console.debug("Farbe aus Cookie gewählt");
+				}
+			</script>
+		</div>
+		<footer>
+			<!-- placeholder during loading google search -->
+			<div id="cse" title="streeter.at durchsuchen">Loading</div>
+		</footer>
+	</body>
+</html>
+
