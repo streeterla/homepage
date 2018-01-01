@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.fh-landshut.de/~mstrass3/ich.html">
+<HTML>
+  <HEAD>
+    <TITLE> MARTIN STRASSERS kleine Homepage - ICH </TITLE>
+    <link rel="stylesheet" type="text/css" href="css.css">
+  </HEAD>
+  <BODY>
+    <p>Wenn ich morgens in die Arbeit komme, dann starte ich immer meinen Firefox, Outlook, die Eingabeaufforderung und den Windows-Explorer.
+       In der Eingabeaufforderung wechsle ich dann immer in das selbe Verzeichnis. 
+       Also habe ich mir - um mir diese Arbeit abzunehmen - ein batch-Skript geschrieben:
+    </p>
+    <p>
+      <code>
+        @echo off<br>
+        start /MAX "C:\Programme\Mozilla Firefox" "firefox.exe"<br>
+        start /MAX "C:\Programme\Microsoft Office\OFFICE11" "OUTLOOK.EXE"<br>
+        start "C:\WINNT\system32\cmd.exe" /D C:\JWorld\projects\pcm\aula3\net<br>
+        start /MAX explorer /e<br>
+        :end<br>
+      </code>
+    </p>
+    <p>
+      <u>Beschreibung:</u><br>
+      Mit "start" wird ein Programm gestartet. Dazu muss der absolute Pfad zur entsprechenden EXE-Datei angegeben werden.<br>
+      Der Parameter "/MAX" l&auml;sst das Programm in einem maximierten Fenster starten.<br>
+      Mit dem Parameter /D plus Pfadangabe spare ich mir das Welchseln des Verzeichnisses in der Eingabeaufforderung.<br> 
+      Zum Starten des Windows-Explorers muss keine EXE-Datei angegeben werden. Der Befehl "explorer" reicht.<br>
+      Der Parameter "/e" startet den Explorer in der Standartansicht.<br> 
+      Das Ganze dann einfach in eine .bat-Datei schreiben - fertig!
+    </p>
+  </BODY>
+</HTML>

@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Berechne Deine Abschlussnote</title>
+		<!--JavaScript-->
+		<!-- jQuery -->
+		<script src="../javascript/jquery/jquery-1.6.min.js"></script>
+		<script src="../javascript/abschlusscalculator.js"></script>
+		<!-- fb -->
+		<script src="http://connect.facebook.net/de_DE/all.js#xfbml=1"></script>
+		<!-- Layout -->
+		<link rel="stylesheet" type="text/css" href="abschlusscalculator.css">
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				Bereichne deine Abschlussnote!
+			</header>
+			<div id="calc">
+				<form>
+					<div id="GA1"><p>GA1: <input type="number" min="0" max="100" name="GA1" size="3" /></p></div>
+					<div id="GA2"><p>GA2: <input type="number" min="0" max="100" name="GA2" size="3" /></p></div>
+					<div id="WISO"><p>WISO: <input type="number" min="0" max="100" name="WISO" size="3" /></p></div>
+					<div id="OK"><input type="button" value="OK" onclick="note(this.form)" /></div>
+					<div id="Punkte"><p>Punkte: <input type="text" min="0" max="100" name="Punkte" size="3" /></p></div>
+					<div id="Note"><p>Note: <input type="text" min="1" max="6" name="Note" size="3" /></p></div>
+					<div id="Nochmal" class="roundbutton"><input type="button" value="nochmal" onclick="nochmal(this.form)" /></div>
+				</form>
+			</div>
+			<footer>
+				<div id="fb">
+					<fb:like href="http://streeter.at/abschlusscalculator/abschlusscalculator.html" show_faces="true" width="450" font="verdana"></fb:like>
+				</div>
+				&copy; 2011 Martin Strasser
+			</footer>
+		</div>
+	</body>
+</html>

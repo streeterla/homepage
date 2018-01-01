@@ -1,0 +1,4 @@
+AddType text/cache-manifest manifest
+Redirect 301 /+ https://plus.google.com/102301766625311466713
+Redirect 301 /home /home.php
+ErrorDocument 404  /error-404.html

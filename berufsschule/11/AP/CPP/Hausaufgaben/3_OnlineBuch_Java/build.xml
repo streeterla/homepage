@@ -1,0 +1,29 @@
+<project name="hausaufgaben" default="compile_and_load" basedir=".">
+
+	<!--============================
+	    call sub targets
+	    ============================ -->
+	<target name="compile_and_load" description="call targets to compile sources and load it to myhomepage">
+		<antcall target="compile" inheritAll="false" />
+		<antcall target="load" inheritAll="false" />
+	</target>
+
+
+	<!-- - - - - - - - - - - - - 
+	   Compile all sources
+	   - - - - - - - - - - - - -  -->
+	<target name="compile">
+		<mkdir dir="bin" />
+		<javac srcdir="src" destdir="bin" />
+	</target>
+
+	<!-- - - - - - - - - - - - -
+	  Load sources to my homepage
+           - - - - - - - - - - - - -  -->
+	<target name="load">
+		<exec executable="scp">
+			<arg line="-r ../**Java streeter@nohostname.de:./htdocs/java/Berufsschule/11/AP/CPP/Hausaufgaben" />
+		</exec>
+	</target>
+
+</project>

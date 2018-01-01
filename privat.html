@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<!-- jQuery -->
+		<script src="javascript/jquery/jquery-2.0.0.min.js"></script>
+		<!-- extjs style -->
+		<link type="text/css" href="javascript/ext/ext-4.0.5/resources/css/ext-all.css" rel="stylesheet" />
+		<script>
+			$(document).ready(function()
+			{
+				Ext.create("Ext.form.Panel",
+				{
+					id: "extForm",
+					renderTo: "privat", 
+					xtype: "fieldcontainer",
+					url: "privat.php",
+					width: 300,
+					title: "Login zum Privatbereich:",
+					standardSubmit: true,
+					draggable: true,
+					buttonAlign: "center",
+					items: [
+					{
+						fieldLabel: "Benutzer",
+						xtype: "textfield",
+						name: "benutzer",
+						grow: true,
+						growMin: 180,
+						allowBlank: false
+					},
+					{
+						fieldLabel: "Passwort",
+						xtype: "textfield",
+						name: "passwort",
+						inputType: "password",
+						grow: true,
+						growMin: 180,
+						allowBlank: false
+					}],
+					buttons: [
+					{
+						text: "Login",
+						type: "submit",
+						handler: function()
+						{
+							if(this.up('form').getForm().isValid())
+							{
+								console.debug("abgeschickt");
+								this.up('form').getForm().submit();
+							}
+						}
+					},
+					{
+						text: "Zur&uuml;cksetzen",
+						handler: function()
+						{
+							console.debug("reset");
+							this.up('form').getForm().reset();
+						}
+					}],
+					keys: [
+					{ 
+						key: [Ext.EventObject.ENTER], 
+						handler: function() 
+						{
+							console.debug("abgeschickt");
+							this.up('form').getForm().submit();
+						}		
+					}]					
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="privat">
+		</div>
+	</body>
+</html>

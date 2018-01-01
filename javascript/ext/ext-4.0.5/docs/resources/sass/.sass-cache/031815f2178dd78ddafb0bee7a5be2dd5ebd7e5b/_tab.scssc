@@ -1,0 +1,852 @@
+3.1.1 (Brainy Betty)
+b067c20d38902169246299661e14f5ee7106d189
+o:Sass::Tree::RootNode
+:@template"€B/**
+  * @class Ext.Tab
+  */
+@mixin extjs-tab {
+    @include x-frame(
+        $cls: 'tab',
+        $ui: 'default-top',
+        $border-radius: $tab-top-border-radius,
+        $border-width: $tab-top-border-width,
+        $background-color: $tab-base-color,
+        $background-gradient: $tab-background-gradient,
+        $background-direction: top,
+        $table: true
+    );
+
+    @include x-frame(
+        $cls: 'tab',
+        $ui: 'default-bottom',
+        $border-radius: $tab-bottom-border-radius,
+        $border-width: $tab-bottom-border-width,
+        $background-color: $tab-base-color,
+        $background-gradient: $tab-background-gradient,
+        $background-direction: bottom,
+        $table: true
+    );
+
+    .#{$prefix}tab {
+        z-index: 1;
+        margin: 0 0 0 $tab-spacing;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        white-space: nowrap;
+        height: $tab-height;
+        border-color: $tab-border-color;
+        cursor: pointer;
+        cursor: hand;
+
+        * {
+            cursor: pointer;
+            cursor: hand;
+        }
+
+        em {
+            display: block;
+            padding: 0 6px;
+            line-height: 1px;
+        }
+
+        button {
+            background: none;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            -webkit-appearance: none;
+            font-size: $tab-font-size;
+            @if $tab-font-weight {
+                font-weight: $tab-font-weight;
+            }
+            @if $tab-font-family {
+                $font-family: $tab-font-family;
+            }
+
+            color: $tab-color;
+            outline: 0 none;
+
+            overflow: hidden;
+            overflow-x: visible;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+
+            &::-moz-focus-inner {
+                border: 0;
+                padding: 0;
+            }
+
+            .#{$prefix}tab-inner {
+                background-color: transparent;
+                background-repeat: no-repeat;
+                background-position: 0 -2px;
+                display: block;
+                text-align: center;
+                white-space: nowrap;
+            }
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+    .#{$prefix}tab-disabled {
+        @include opacity(1);
+    }
+
+    .#{$prefix}border-box {
+        .#{$prefix}tab-default-top {
+            height: $tab-height + top($tabbar-top-strip-border-width);
+        }
+        .#{$prefix}tab-default-bottom {
+            height: $tab-height + bottom($tabbar-bottom-strip-border-width);
+        }
+    }
+
+    @if $include-ie {
+        * html .#{$prefix}ie {
+            .#{$prefix}tab button {
+                width: 1px;
+            }
+        }
+
+        .#{$prefix}strict .#{$prefix}ie6,
+        .#{$prefix}strict .#{$prefix}ie7 {
+            .#{$prefix}tab .#{$prefix}frame-mc {
+                height: 100%;
+            }
+        }
+
+        .#{$prefix}ie .#{$prefix}tab-active button:active {
+            position: relative;
+            top: -1px;
+            left: -1px;
+        }
+    }
+
+    $framepad: max(top($tab-top-border-radius), right($tab-top-border-radius)) - top($tab-top-border-width);
+
+    .#{$prefix}tab-default-top {
+        @if $tab-inner-border {
+            @include inner-border(
+                $width: $tab-top-inner-border-width,
+                $color: $tab-inner-border-color
+            );
+        }
+
+        border-bottom: 1px solid $tabbar-strip-border-color !important;
+
+        em {
+            padding-bottom: $framepad;
+        }
+
+        button,
+        .#{$prefix}tab-inner {
+            height: $tab-height - $framepad * 2 - top($tab-top-border-width);
+            line-height: $tab-height - $framepad * 2 - top($tab-top-border-width);
+        }
+    }
+
+    .#{$prefix}nbr .#{$prefix}tab-default-top {
+        border-bottom-width: 1px !important;
+    }
+
+    .#{$prefix}tab-default-top-active {
+        border-bottom-color: $tabbar-strip-background-color !important;
+    }
+
+    $framepad: max(bottom($tab-bottom-border-radius), left($tab-bottom-border-radius)) - bottom($tab-bottom-border-width);
+
+    .#{$prefix}tab-default-bottom {
+        @if $tab-inner-border {
+            @include inner-border(
+                $width: $tab-bottom-inner-border-width,
+                $color: $tab-inner-border-color
+            );
+        }
+
+        border-top: 1px solid $tabbar-strip-border-color !important;
+
+        @include inner-border(
+            $width: $tab-bottom-inner-border-width,
+            $color: $tab-inner-border-color
+        );
+
+        em {
+            padding-top: $framepad;
+        }
+
+        button,
+        .#{$prefix}tab-inner {
+            height: $tab-height - $framepad * 2 - bottom($tab-bottom-border-width);
+            line-height: $tab-height - $framepad * 2 - bottom($tab-bottom-border-width);
+        }
+    }
+
+    .#{$prefix}nbr .#{$prefix}tab-default-bottom {
+        border-top-width: 1px !important;
+    }
+
+    .#{$prefix}tab-default-bottom-active {
+        border-top-color: $tabbar-strip-background-color !important;
+    }
+
+    .#{$prefix}tab-default-disabled {
+        cursor: default;
+
+        * {
+            cursor: default;
+        }
+
+        border-color: $tab-border-color-disabled;
+        @include background-gradient($tab-base-color-disabled, $tab-background-gradient-disabled);
+
+        button {
+            color: $tab-color-disabled !important;
+        }
+    }
+
+    .#{$prefix}tab-icon-text-left {
+        .#{$prefix}tab-inner {
+            padding-left: 20px;
+        }
+    }
+
+    .#{$prefix}tab {
+        button, a {
+            position: relative;
+
+            .#{$prefix}tab-icon {
+                position: absolute;
+                background-repeat: no-repeat;
+                top: 0;
+                left:0;
+                right:auto;
+                bottom:0;
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
+
+    //over
+    .#{$prefix}tab-over {
+        @if $tab-border-color-over != $tab-border-color {
+            border-color: $tab-border-color-over;
+        }
+
+        button {
+            @if $tab-color-over != $tab-color {
+                color: $tab-color-over;
+            }
+            @if $tab-font-weight-over != $tab-font-weight {
+                font-weight: $tab-font-weight-over;
+            }
+            @if $tab-font-size-over != $tab-font-size {
+                font-size: $tab-font-size-over;
+            }
+            @if $tab-font-family-over != $tab-font-family {
+                font-family: $tab-font-family-over;
+            }
+        }
+    }
+
+    .#{$prefix}tab-top-over {
+        @include background-gradient($tab-base-color-over, $tab-background-gradient-over, top);
+    }
+    .#{$prefix}tab-bottom-over {
+        @include background-gradient($tab-base-color-over, $tab-background-gradient-over, bottom);
+    }
+
+    //active
+    .#{$prefix}tab-active {
+        z-index: 3;
+        @if $tab-border-color-active != $tab-border-color {
+            border-color: $tab-border-color-active;
+        }
+
+        button {
+            @if $tab-color-active != $tab-color {
+                color: $tab-color-active;
+            }
+            @if $tab-font-weight-active != $tab-font-weight {
+                font-weight: $tab-font-weight-active;
+            }
+            @if $tab-font-size-active != $tab-font-size {
+                font-size: $tab-font-size-active;
+            }
+            @if $tab-font-family-active != $tab-font-family {
+                font-family: $tab-font-family-active;
+            }
+        }
+    }
+
+    .#{$prefix}tab-top-active {
+        @include background-gradient($tab-base-color-active, $tab-background-gradient-active, top);
+    }
+    .#{$prefix}tab-bottom-active {
+        @include background-gradient($tab-base-color-active, $tab-background-gradient-active, bottom);
+    }
+
+    //disabled
+    .#{$prefix}tab-disabled {
+        @if $tab-border-color-disabled != $tab-border-color {
+            border-color: $tab-border-color-disabled;
+        }
+
+        button {
+            @if $tab-color-disabled != $tab-color {
+                color: $tab-color-disabled;
+            }
+            @if $tab-font-weight-disabled != $tab-font-weight {
+                font-weight: $tab-font-weight-disabled;
+            }
+            @if $tab-font-size-disabled != $tab-font-size {
+                font-size: $tab-font-size-disabled;
+            }
+            @if $tab-font-family-disabled != $tab-font-family {
+                font-family: $tab-font-family-disabled;
+            }
+        }
+    }
+
+    .#{$prefix}tab-top-disabled {
+        background-image: none;
+        background: transparent;
+        @include background-gradient($tab-base-color-disabled, $tab-background-gradient-disabled, top);
+    }
+    .#{$prefix}tab-bottom-disabled {
+        background-image: none;
+        background: transparent;
+        @include background-gradient($tab-base-color-disabled, $tab-background-gradient-disabled, bottom);
+    }
+
+    @if not $supports-gradients or $compile-all {
+        .#{$prefix}nlg {
+            @if $tab-background-gradient != null {
+                .#{$prefix}tab-top { background-image: theme-background-image($theme-name, 'tab/tab-default-top-bg.gif'); }
+                .#{$prefix}tab-bottom { background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-bg.gif'); }
+            }
+
+            @if $tab-background-gradient-over != null {
+                .#{$prefix}tab-top-over { background-image: theme-background-image($theme-name, 'tab/tab-default-top-over-bg.gif'); }
+                .#{$prefix}tab-bottom-over { background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-over-bg.gif'); }
+            }
+
+            @if $tab-background-gradient-active != null {
+                .#{$prefix}tab-top-active { background-image: theme-background-image($theme-name, 'tab/tab-default-top-active-bg.gif'); }
+                .#{$prefix}tab-bottom-active { background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-active-bg.gif'); }
+            }
+
+            @if $tab-background-gradient-disabled != null {
+                .#{$prefix}tab-top-disabled { background-image: theme-background-image($theme-name, 'tab/tab-default-top-disabled-bg.gif') !important; }
+                .#{$prefix}tab-bottom-disabled { background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-disabled-bg.gif') !important; }
+            }
+        }
+    }
+
+    .#{$prefix}tab-closable em {
+        padding-right: $tab-closable-icon-width + 3;
+    }
+
+    .#{$prefix}tab-close-btn {
+        position: absolute !important;
+        top: $tab-closable-icon-top;
+        right: $tab-closable-icon-right;
+        width: $tab-closable-icon-width;
+        height: $tab-closable-icon-height;
+        font-size: 0;
+        line-height: 0;
+        text-indent: -999px;
+        background: no-repeat;
+        background-image: theme-background-image($theme-name, $tab-closable-icon);
+        @include opacity(.6);
+    }
+    .#{$prefix}tab-close-btn:hover {
+        @include opacity(1);
+    }
+
+    @if not $supports-border-radius or $compile-all {
+        .#{$prefix}nbr {
+            .#{$prefix}tab-top-over {
+                .#{$prefix}frame-tl,
+                .#{$prefix}frame-bl,
+                .#{$prefix}frame-tr,
+                .#{$prefix}frame-br,
+                .#{$prefix}frame-tc,
+                .#{$prefix}frame-bc {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-top-over-corners.gif');
+                }
+                .#{$prefix}frame-ml,
+                .#{$prefix}frame-mr {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-top-over-sides.gif');
+                }
+                @if $tab-background-gradient-over != null {
+                    .#{$prefix}frame-mc {
+                        background-color: $tab-base-color-over;
+                        background-repeat: repeat-x;
+                        background-image: theme-background-image($theme-name, 'tab/tab-default-top-over-bg.gif');
+                    }
+                }
+            }
+
+            .#{$prefix}tab-bottom-over {
+                .#{$prefix}frame-tl,
+                .#{$prefix}frame-bl,
+                .#{$prefix}frame-tr,
+                .#{$prefix}frame-br,
+                .#{$prefix}frame-tc,
+                .#{$prefix}frame-bc {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-over-corners.gif');
+                }
+                .#{$prefix}frame-ml,
+                .#{$prefix}frame-mr {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-over-sides.gif');
+                }
+                @if $tab-background-gradient-over != null {
+                    .#{$prefix}frame-mc {
+                        background-color: $tab-base-color-over;
+                        background-repeat: repeat-x;
+                        background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-over-bg.gif');
+                    }
+                }
+            }
+
+            .#{$prefix}tab-top-active {
+                .#{$prefix}frame-tl,
+                .#{$prefix}frame-bl,
+                .#{$prefix}frame-tr,
+                .#{$prefix}frame-br,
+                .#{$prefix}frame-tc,
+                .#{$prefix}frame-bc {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-top-active-corners.gif');
+                }
+                .#{$prefix}frame-ml,
+                .#{$prefix}frame-mr {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-top-active-sides.gif');
+                }
+                @if $tab-background-gradient-active != null {
+                    .#{$prefix}frame-mc {
+                        background-color: $tab-base-color-active;
+                        background-repeat: repeat-x;
+                        background-image: theme-background-image($theme-name, 'tab/tab-default-top-active-bg.gif');
+                    }
+                }
+            }
+
+            .#{$prefix}tab-bottom-active {
+                .#{$prefix}frame-tl,
+                .#{$prefix}frame-bl,
+                .#{$prefix}frame-tr,
+                .#{$prefix}frame-br,
+                .#{$prefix}frame-tc,
+                .#{$prefix}frame-bc {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-active-corners.gif');
+                }
+                .#{$prefix}frame-ml,
+                .#{$prefix}frame-mr {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-active-sides.gif');
+                }
+                @if $tab-background-gradient-active != null {
+                    .#{$prefix}frame-mc {
+                        background-color: $tab-base-color-active;
+                        background-repeat: repeat-x;
+                        background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-active-bg.gif');
+                    }
+                }
+            }
+
+            .#{$prefix}tab-top-disabled {
+                .#{$prefix}frame-tl,
+                .#{$prefix}frame-bl,
+                .#{$prefix}frame-tr,
+                .#{$prefix}frame-br,
+                .#{$prefix}frame-tc,
+                .#{$prefix}frame-bc {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-top-disabled-corners.gif');
+                }
+                .#{$prefix}frame-ml,
+                .#{$prefix}frame-mr {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-top-disabled-sides.gif');
+                }
+                @if $tab-background-gradient-disabled != null {
+                    .#{$prefix}frame-mc {
+                        background-repeat: repeat-x;
+                        background-image: theme-background-image($theme-name, 'tab/tab-default-top-disabled-bg.gif');
+                    }
+                }
+            }
+
+            .#{$prefix}tab-bottom-disabled {
+                .#{$prefix}frame-tl,
+                .#{$prefix}frame-bl,
+                .#{$prefix}frame-tr,
+                .#{$prefix}frame-br,
+                .#{$prefix}frame-tc,
+                .#{$prefix}frame-bc {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-disabled-corners.gif');
+                }
+                .#{$prefix}frame-ml,
+                .#{$prefix}frame-mr {
+                    background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-disabled-sides.gif');
+                }
+                @if $tab-background-gradient-disabled != null {
+                    .#{$prefix}frame-mc {
+                        background-repeat: repeat-x;
+                        background-image: theme-background-image($theme-name, 'tab/tab-default-bottom-disabled-bg.gif');
+                    }
+                }
+            }
+        }
+    }
+}
+:@options{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:
+@linei:@has_childrenT:@children[o:Sass::Tree::CommentNode:@silent0;@:@value" /**
+  * @class Ext.Tab
+  */;i:@lines[ :
+@loud0;[ o:Sass::Tree::MixinDefNode;@:
+@name"extjs-tab;i	:
+@args[ ;T;['o:Sass::Tree::MixinNode;@;"x-frame;i:@keywords{"background_gradiento:Sass::Script::Variable	;{ ;"tab-background-gradient;i:@underscored_name"tab_background_gradient"
+tableo:Sass::Script::Bool;@;T;i"background_directiono:Sass::Script::String	:
+@type:identifier;@;"top;i"border_radiuso;	;@;"tab-top-border-radius;i;"tab_top_border_radius"uio;	;:string;@;"default-top;i"background_coloro;	;@;"tab-base-color;i;"tab_base_color"border_widtho;	;@;"tab-top-border-width;i;"tab_top_border_width"clso;	;;;@;"tab;i;[ ;[ o;;@;"x-frame;i;{"background_gradiento;	;{ ;"tab-background-gradient;i;"tab_background_gradient"
+tableo;;@9;T;i"background_directiono;	;;;@9;"bottom;i"border_radiuso;	;@9;"tab-bottom-border-radius;i;"tab_bottom_border_radius"uio;	;;;@9;"default-bottom;i"background_coloro;	;@9;"tab-base-color;i;"tab_base_color"border_widtho;	;@9;"tab-bottom-border-width;i;"tab_bottom_border_width"clso;	;;;@9;"tab;i;[ ;[ o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;i ;"prefix"tab;@;i ;T;[o:Sass::Tree::PropNode:@prop_syntax:new;@;o;;;;"1;["z-index;i!;[ :
+@tabsi o;!;";#;@;o:Sass::Script::List	:@separator:
+space;{ ;[	o:Sass::Script::Number:@numerator_units[ ;@f:@original"0;i ;i":@denominator_units[ o;(;)[ ;@f;*"0;i ;i";+@ko;(;)[ ;@f;*"0;i ;i";+@ko;	;@f;"tab-spacing;i";"tab_spacing;i";["margin;i";[ ;$i o;!;";#;@;o;;;;"inline-block;["display;i#;[ ;$i o;!;";#;@;o;;;;"1;["	zoom;i$;[ ;$i o;!;";#;@;o;;;;"inline;["*display;i%;[ ;$i o;!;";#;@;o;;;;"nowrap;["white-space;i&;[ ;$i o;!;";#;@;o;	;{ ;"tab-height;i';"tab_height;["height;i';[ ;$i o;!;";#;@;o;	;{ ;"tab-border-color;i(;"tab_border_color;["border-color;i(;[ ;$i o;!;";#;@;o;;;;"pointer;["cursor;i);[ ;$i o;!;";#;@;o;;;;"	hand;["cursor;i*;[ ;$i o;; ["*:@parsed_ruleso:"Sass::Selector::CommaSequence:@filename" ;i,:@members[o:Sass::Selector::Sequence;/[o:#Sass::Selector::SimpleSequence;.@´;i,;/[o:Sass::Selector::Universal:@namespace0;.@´;i,;@;i,;T;[o;!;";#;@;o;;;;"pointer;["cursor;i-;[ ;$i o;!;";#;@;o;;;;"	hand;["cursor;i.;[ ;$i ;$i o;; ["em;,o;-;." ;i1;/[o;0;/[o;1;.@√;i1;/[o:Sass::Selector::Element	;30;.@√;["em;i1;@;i1;T;[o;!;";#;@;o;;;;"
+block;["display;i2;[ ;$i o;!;";#;@;o;;;;"
+0 6px;["padding;i3;[ ;$i o;!;";#;@;o;;;;"1px;["line-height;i4;[ ;$i ;$i o;; ["button;,o;-;." ;i7;/[o;0;/[o;1;.@„;i7;/[o;4	;30;.@„;["button;i7;@;i7;T;[o;!;";#;@;o;;;;"	none;["background;i8;[ ;$i o;!;";#;@;o;;;;"0;["border;i9;[ ;$i o;!;";#;@;o;;;;"0;["padding;i:;[ ;$i o;!;";#;@;o;;;;"0;["margin;i;;[ ;$i o;!;";#;@;o;;;;"	none;["-webkit-appearance;i<;[ ;$i o;!;";#;@;o;	;{ ;"tab-font-size;i=;"tab_font_size;["font-size;i=;[ ;$i u:Sass::Tree::IfNode¢[o:Sass::Script::Variable	:@options{ :
+@name"tab-font-weight:
+@linei>:@underscored_name"tab_font_weight0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo; 	;{ ;"tab-font-weight;i?;	"tab_font_weight;["font-weight;i?:@children[ :
+@tabsi u;5í[o:Sass::Script::Variable	:@options{ :
+@name"tab-font-family:
+@lineiA:@underscored_name"tab_font_family0[o:Sass::Tree::VariableNode:@guarded0:
+@expro; 	;{ ;"tab-font-family;iB;	"tab_font_family;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"font-family;iB:@children[ o;!;";#;@;o;	;{ ;"tab-color;iE;"tab_color;["
+color;iE;[ ;$i o;!;";#;@;o;;;;"0 none;["outline;iF;[ ;$i o;!;";#;@;o;;;;"hidden;["overflow;iH;[ ;$i o;!;";#;@;o;;;;"visible;["overflow-x;iI;[ ;$i o;!;";#;@;o;;;;"ellipsis;["-o-text-overflow;iJ;[ ;$i o;!;";#;@;o;;;;"ellipsis;["text-overflow;iK;[ ;$i o;; ["&::-moz-focus-inner;,o;-;." ;iM;/[o;0;/[o;1;.@?;iM;/[o:Sass::Selector::Parent;.@?;iMo:Sass::Selector::Pseudo
+;:element;.@?;["-moz-focus-inner;iM:	@arg0;@;iM;T;[o;!;";#;@;o;;;;"0;["border;iN;[ ;$i o;!;";#;@;o;;;;"0;["padding;iO;[ ;$i ;$i o;; [".o;	;{ ;"prefix;iR;"prefix"tab-inner;@;iR;T;[o;!;";#;@;o;;;;"transparent;["background-color;iS;[ ;$i o;!;";#;@;o;;;;"no-repeat;["background-repeat;iT;[ ;$i o;!;";#;@;o;%	;&;';{ ;[o;(;)[ ;@m;*"0;i ;iU;+@ko;(;)["px;@m;*"	-2px;i˘;iU;+[ ;iU;["background-position;iU;[ ;$i o;!;";#;@;o;;;;"
+block;["display;iV;[ ;$i o;!;";#;@;o;;;;"center;["text-align;iW;[ ;$i o;!;";#;@;o;;;;"nowrap;["white-space;iX;[ ;$i ;$i ;$i o;; ["img;,o;-;." ;i\;/[o;0;/[o;1;.@ê;i\;/[o;4	;30;.@ê;["img;i\;@;i\;T;[o;!;";#;@;o;;;;"	none;["display;i];[ ;$i ;$i ;$i o;; [".o;	;{ ;"prefix;ia;"prefix"tab-disabled;@;ia;T;[o;;@;"opacity;ib;{ ;[o;(;)[ ;{ ;*"1;i;ib;+@k;[ ;$i o;; [".o;	;{ ;"prefix;ie;"prefix"border-box;@;ie;T;[o;; [".o;	;{ ;"prefix;if;"prefix"tab-default-top;@;if;T;[o;!;";#;@;o:Sass::Script::Operation
+:@operator:	plus;{ ;ig:@operand2o:Sass::Script::Funcall
+;@∆;"top;ig;{ ;[o;	;@∆;""tabbar-top-strip-border-width;ig;""tabbar_top_strip_border_width:@operand1o;	;@∆;"tab-height;ig;"tab_height;["height;ig;[ ;$i ;$i o;; [".o;	;{ ;"prefix;ii;"prefix"tab-default-bottom;@;ii;T;[o;!;";#;@;o;:
+;;;<;{ ;ij;=o;>
+;@ﬂ;"bottom;ij;{ ;[o;	;@ﬂ;"%tabbar-bottom-strip-border-width;ij;"%tabbar_bottom_strip_border_width;?o;	;@ﬂ;"tab-height;ij;"tab_height;["height;ij;[ ;$i ;$i ;$i u;5?[o:Sass::Script::Variable	:@options{ :
+@name"include-ie:
+@linein:@underscored_name"include_ie0[o:Sass::Tree::RuleNode:
+@rule["* html .o; 	;{ ;"prefix;io;	"prefix"ie;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;io:@has_childrenT:@children[o;
+;[".o; 	;{ ;"prefix;ip;	"prefix"tab button;@;ip;T;[o:Sass::Tree::PropNode:@prop_syntax:new;@:@valueo:Sass::Script::String:
+@type:identifier;"1px;["
+width;iq;[ :
+@tabsi ;i ;i o;
+;[".o; 	;{ ;"prefix;iu;	"prefix"strict .o; 	;{ ;"prefix;iu;	"prefix"ie6,
+        .o; 	;{ ;"prefix;iv;	"prefix"strict .o; 	;{ ;"prefix;iv;	"prefix"ie7;@;iv;T;[o;
+;[
+".o; 	;{ ;"prefix;iw;	"prefix"
+tab .o; 	;{ ;"prefix;iw;	"prefix"frame-mc;@;iw;T;[o;;;;@;o;;;;"	100%;["height;ix;[ ;i ;i ;i o;
+;[
+".o; 	;{ ;"prefix;i|;	"prefix"	ie .o; 	;{ ;"prefix;i|;	"prefix"tab-active button:active;@;i|;T;[o;;;;@;o;;;;"relative;["position;i};[ ;i o;;;;@;o:Sass::Script::Number:@numerator_units["px;{ :@original"	-1px;i˙;i~:@denominator_units[ ;["top;i~;[ ;i o;;;;@;o;;["px;{ ;"	-1px;i˙;i;[ ;["	left;i;[ ;i ;i o:Sass::Tree::VariableNode:@guarded0:
+@expro;:
+;;:
+minus;{ ;i~;=o;>
+;@;"top;i~;{ ;[o;	;@;"tab-top-border-width;i~;"tab_top_border_width;?o;>
+;@;"max;i~;{ ;[o;>
+;@;"top;i~;{ ;[o;	;@;"tab-top-border-radius;i~;"tab_top_border_radiuso;>
+;@;"
+right;i~;{ ;[o;	;@;"tab-top-border-radius;i~;"tab_top_border_radius;@;"framepad;i~;[ o;; [".o;	;{ ;"prefix;iÄ;"prefix"tab-default-top;@;iÄ;T;[	u;5˛[o:Sass::Script::Variable	:@options{ :
+@name"tab-inner-border:
+@lineiÅ:@underscored_name"tab_inner_border0[o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"inner-border;iÖ:@keywords{"
+coloro; 	;{ ;"tab-inner-border-color;iÑ;	"tab_inner_border_color"
+widtho; 	;@;"tab-top-inner-border-width;iÉ;	"tab_top_inner_border_width:
+@args[ :@children[ o;!;";#;@;o;%	;&;';{ ;[	o;(;)["px;@;*"1px;i;ià;+[ o;	;;;@;"
+solid;iào;	;@;"tabbar-strip-border-color;ià;"tabbar_strip_border_coloro;	;;;@;"!important;ià;ià;["border-bottom;ià;[ ;$i o;; ["em;,o;-;." ;iä;/[o;0;/[o;1;.@-;iä;/[o;4	;30;.@-;["em;iä;@;iä;T;[o;!;";#;@;o;	;{ ;"framepad;iã;"framepad;["padding-bottom;iã;[ ;$i ;$i o;; ["button,
+        .o;	;{ ;"prefix;iè;"prefix"tab-inner;@;iè;T;[o;!;";#;@;o;:
+;;;C;{ ;iê;=o;>
+;@J;"top;iê;{ ;[o;	;@J;"tab-top-border-width;iê;"tab_top_border_width;?o;:
+;;;C;@J;iê;=o;:
+;;:
+times;@J;iê;=o;(;)[ ;@J;*"2;i;iê;+@k;?o;	;@J;"framepad;iê;"framepad;?o;	;@J;"tab-height;iê;"tab_height;["height;iê;[ ;$i o;!;";#;@;o;:
+;;;C;{ ;ië;=o;>
+;@b;"top;ië;{ ;[o;	;@b;"tab-top-border-width;ië;"tab_top_border_width;?o;:
+;;;C;@b;ië;=o;:
+;;;D;@b;ië;=o;(;)[ ;@b;*"2;i;ië;+@k;?o;	;@b;"framepad;ië;"framepad;?o;	;@b;"tab-height;ië;"tab_height;["line-height;ië;[ ;$i ;$i ;$i o;; [
+".o;	;{ ;"prefix;iï;"prefix"
+nbr .o;	;{ ;"prefix;iï;"prefix"tab-default-top;@;iï;T;[o;!;";#;@;o;;;;"1px !important;["border-bottom-width;iñ;[ ;$i ;$i o;; [".o;	;{ ;"prefix;iô;"prefix"tab-default-top-active;@;iô;T;[o;!;";#;@;o;%	;&;';{ ;[o;	;@ó;""tabbar-strip-background-color;iö;""tabbar_strip_background_coloro;	;;;@ó;"!important;iö;iö;["border-bottom-color;iö;[ ;$i ;$i o;@;A0;Bo;:
+;;;C;{ ;iù;=o;>
+;@£;"bottom;iù;{ ;[o;	;@£;"tab-bottom-border-width;iù;"tab_bottom_border_width;?o;>
+;@£;"max;iù;{ ;[o;>
+;@£;"bottom;iù;{ ;[o;	;@£;"tab-bottom-border-radius;iù;"tab_bottom_border_radiuso;>
+;@£;"	left;iù;{ ;[o;	;@£;"tab-bottom-border-radius;iù;"tab_bottom_border_radius;@;"framepad;iù;[ o;; [".o;	;{ ;"prefix;iü;"prefix"tab-default-bottom;@;iü;T;[
+u;5[o:Sass::Script::Variable	:@options{ :
+@name"tab-inner-border:
+@linei†:@underscored_name"tab_inner_border0[o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"inner-border;i§:@keywords{"
+coloro; 	;{ ;"tab-inner-border-color;i£;	"tab_inner_border_color"
+widtho; 	;@;""tab-bottom-inner-border-width;i¢;	""tab_bottom_inner_border_width:
+@args[ :@children[ o;!;";#;@;o;%	;&;';{ ;[	o;(;)["px;@À;*"1px;i;iß;+[ o;	;;;@À;"
+solid;ißo;	;@À;"tabbar-strip-border-color;iß;"tabbar_strip_border_coloro;	;;;@À;"!important;iß;iß;["border-top;iß;[ ;$i o;;@;"inner-border;i¨;{"
+coloro;	;{ ;"tab-inner-border-color;i´;"tab_inner_border_color"
+widtho;	;@·;""tab-bottom-inner-border-width;i™;""tab_bottom_inner_border_width;[ ;[ o;; ["em;,o;-;." ;iÆ;/[o;0;/[o;1;.@Ó;iÆ;/[o;4	;30;.@Ó;["em;iÆ;@;iÆ;T;[o;!;";#;@;o;	;{ ;"framepad;iØ;"framepad;["padding-top;iØ;[ ;$i ;$i o;; ["button,
+        .o;	;{ ;"prefix;i≥;"prefix"tab-inner;@;i≥;T;[o;!;";#;@;o;:
+;;;C;{ ;i¥;=o;>
+;@;"bottom;i¥;{ ;[o;	;@;"tab-bottom-border-width;i¥;"tab_bottom_border_width;?o;:
+;;;C;@;i¥;=o;:
+;;;D;@;i¥;=o;(;)[ ;@;*"2;i;i¥;+@k;?o;	;@;"framepad;i¥;"framepad;?o;	;@;"tab-height;i¥;"tab_height;["height;i¥;[ ;$i o;!;";#;@;o;:
+;;;C;{ ;iµ;=o;>
+;@#;"bottom;iµ;{ ;[o;	;@#;"tab-bottom-border-width;iµ;"tab_bottom_border_width;?o;:
+;;;C;@#;iµ;=o;:
+;;;D;@#;iµ;=o;(;)[ ;@#;*"2;i;iµ;+@k;?o;	;@#;"framepad;iµ;"framepad;?o;	;@#;"tab-height;iµ;"tab_height;["line-height;iµ;[ ;$i ;$i ;$i o;; [
+".o;	;{ ;"prefix;iπ;"prefix"
+nbr .o;	;{ ;"prefix;iπ;"prefix"tab-default-bottom;@;iπ;T;[o;!;";#;@;o;;;;"1px !important;["border-top-width;i∫;[ ;$i ;$i o;; [".o;	;{ ;"prefix;iΩ;"prefix"tab-default-bottom-active;@;iΩ;T;[o;!;";#;@;o;%	;&;';{ ;[o;	;@X;""tabbar-strip-background-color;iæ;""tabbar_strip_background_coloro;	;;;@X;"!important;iæ;iæ;["border-top-color;iæ;[ ;$i ;$i o;; [".o;	;{ ;"prefix;i¡;"prefix"tab-default-disabled;@;i¡;T;[
+o;!;";#;@;o;;;;"default;["cursor;i¬;[ ;$i o;; ["*;,o;-;." ;iƒ;/[o;0;/[o;1;.@u;iƒ;/[o;2;30;.@u;iƒ;@;iƒ;T;[o;!;";#;@;o;;;;"default;["cursor;i≈;[ ;$i ;$i o;!;";#;@;o;	;{ ;"tab-border-color-disabled;i»;"tab_border_color_disabled;["border-color;i»;[ ;$i o;;@;"background-gradient;i…;{ ;[o;	;{ ;"tab-base-color-disabled;i…;"tab_base_color_disabledo;	;@ê;"%tab-background-gradient-disabled;i…;"%tab_background_gradient_disabled;[ o;; ["button;,o;-;." ;iÀ;/[o;0;/[o;1;.@õ;iÀ;/[o;4	;30;.@õ;["button;iÀ;@;iÀ;T;[o;!;";#;@;o;%	;&;';{ ;[o;	;@ß;"tab-color-disabled;iÃ;"tab_color_disabledo;	;;;@ß;"!important;iÃ;iÃ;["
+color;iÃ;[ ;$i ;$i ;$i o;; [".o;	;{ ;"prefix;i–;"prefix"tab-icon-text-left;@;i–;T;[o;; [".o;	;{ ;"prefix;i—;"prefix"tab-inner;@;i—;T;[o;!;";#;@;o;;;;"	20px;["padding-left;i“;[ ;$i ;$i ;$i o;; [".o;	;{ ;"prefix;i÷;"prefix"tab;@;i÷;T;[o;; ["button, a;,o;-;." ;i◊;/[o;0;/[o;1;.@÷;i◊;/[o;4	;30;.@÷;["button;i◊o;0;/[o;1;.@÷;i◊;/[o;4	;30;.@÷;["a;i◊;@;i◊;T;[o;!;";#;@;o;;;;"relative;["position;iÿ;[ ;$i o;; [".o;	;{ ;"prefix;i⁄;"prefix"tab-icon;@;i⁄;T;[o;!;";#;@;o;;;;"absolute;["position;i€;[ ;$i o;!;";#;@;o;;;;"no-repeat;["background-repeat;i‹;[ ;$i o;!;";#;@;o;;;;"0;["top;i›;[ ;$i o;!;";#;@;o;;;;"0;["	left;iﬁ;[ ;$i o;!;";#;@;o;;;;"	auto;["
+right;iﬂ;[ ;$i o;!;";#;@;o;;;;"0;["bottom;i‡;[ ;$i o;!;";#;@;o;;;;"	18px;["
+width;i·;[ ;$i o;!;";#;@;o;;;;"	18px;["height;i‚;[ ;$i ;$i ;$i ;$i o;;i ;@;"/*over */;iÁ;[ ;0;[ o;; [".o;	;{ ;"prefix;iË;"prefix"tab-over;@;iË;T;[u;5=[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@lineiÈ:@operand2o:Sass::Script::Variable	;@:
+@name"tab-border-color;	iÈ:@underscored_name"tab_border_color:@operand1o;	;@;"tab-border-color-over;	iÈ;"tab_border_color_over0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-border-color-over;	iÍ;"tab_border_color_over;["border-color;	iÍ:@children[ :
+@tabsi o;; ["button;,o;-;." ;iÌ;/[o;0;/[o;1;.@8;iÌ;/[o;4	;30;.@8;["button;iÌ;@;iÌ;T;[	u;5[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@lineiÓ:@operand2o:Sass::Script::Variable	;@:
+@name"tab-color;	iÓ:@underscored_name"tab_color:@operand1o;	;@;"tab-color-over;	iÓ;"tab_color_over0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-color-over;	iÔ;"tab_color_over;["
+color;	iÔ:@children[ :
+@tabsi u;56[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@lineiÒ:@operand2o:Sass::Script::Variable	;@:
+@name"tab-font-weight;	iÒ:@underscored_name"tab_font_weight:@operand1o;	;@;"tab-font-weight-over;	iÒ;"tab_font_weight_over0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-font-weight-over;	iÚ;"tab_font_weight_over;["font-weight;	iÚ:@children[ :
+@tabsi u;5([o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@lineiÙ:@operand2o:Sass::Script::Variable	;@:
+@name"tab-font-size;	iÙ:@underscored_name"tab_font_size:@operand1o;	;@;"tab-font-size-over;	iÙ;"tab_font_size_over0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-font-size-over;	iı;"tab_font_size_over;["font-size;	iı:@children[ :
+@tabsi u;56[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei˜:@operand2o:Sass::Script::Variable	;@:
+@name"tab-font-family;	i˜:@underscored_name"tab_font_family:@operand1o;	;@;"tab-font-family-over;	i˜;"tab_font_family_over0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-font-family-over;	i¯;"tab_font_family_over;["font-family;	i¯:@children[ :
+@tabsi ;$i ;$i o;; [".o;	;{ ;"prefix;i˝;"prefix"tab-top-over;@;i˝;T;[o;;@;"background-gradient;i˛;{ ;[o;	;{ ;"tab-base-color-over;i˛;"tab_base_color_overo;	;@T;"!tab-background-gradient-over;i˛;"!tab_background_gradient_overo;	;;;@T;"top;i˛;[ ;$i o;; [".o;	;{ ;"prefix;i ;"prefix"tab-bottom-over;@;i ;T;[o;;@;"background-gradient;i;{ ;[o;	;{ ;"tab-base-color-over;i;"tab_base_color_overo;	;@k;"!tab-background-gradient-over;i;"!tab_background_gradient_overo;	;;;@k;"bottom;i;[ ;$i o;;i ;@;"/*active */;i;[ ;0;[ o;; [".o;	;{ ;"prefix;i;"prefix"tab-active;@;i;T;[o;!;";#;@;o;;;;"3;["z-index;i;[ ;$i u;5J[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei:@operand2o:Sass::Script::Variable	;@:
+@name"tab-border-color;	i:@underscored_name"tab_border_color:@operand1o;	;@;"tab-border-color-active;	i;"tab_border_color_active0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-border-color-active;	i;"tab_border_color_active;["border-color;	i:@children[ :
+@tabsi o;; ["button;,o;-;." ;i;/[o;0;/[o;1;.@å;i;/[o;4	;30;.@å;["button;i;@;i;T;[	u;5[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei:@operand2o:Sass::Script::Variable	;@:
+@name"tab-color;	i:@underscored_name"tab_color:@operand1o;	;@;"tab-color-active;	i;"tab_color_active0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-color-active;	i;"tab_color_active;["
+color;	i:@children[ :
+@tabsi u;5C[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei:@operand2o:Sass::Script::Variable	;@:
+@name"tab-font-weight;	i:@underscored_name"tab_font_weight:@operand1o;	;@;"tab-font-weight-active;	i;"tab_font_weight_active0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-font-weight-active;	i;"tab_font_weight_active;["font-weight;	i:@children[ :
+@tabsi u;55[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei:@operand2o:Sass::Script::Variable	;@:
+@name"tab-font-size;	i:@underscored_name"tab_font_size:@operand1o;	;@;"tab-font-size-active;	i;"tab_font_size_active0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-font-size-active;	i;"tab_font_size_active;["font-size;	i:@children[ :
+@tabsi u;5C[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei:@operand2o:Sass::Script::Variable	;@:
+@name"tab-font-family;	i:@underscored_name"tab_font_family:@operand1o;	;@;"tab-font-family-active;	i;"tab_font_family_active0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-font-family-active;	i;"tab_font_family_active;["font-family;	i:@children[ :
+@tabsi ;$i ;$i o;; [".o;	;{ ;"prefix;i;"prefix"tab-top-active;@;i;T;[o;;@;"background-gradient;i;{ ;[o;	;{ ;"tab-base-color-active;i;"tab_base_color_activeo;	;@®;"#tab-background-gradient-active;i;"#tab_background_gradient_activeo;	;;;@®;"top;i;[ ;$i o;; [".o;	;{ ;"prefix;i;"prefix"tab-bottom-active;@;i;T;[o;;@;"background-gradient;i;{ ;[o;	;{ ;"tab-base-color-active;i;"tab_base_color_activeo;	;@ø;"#tab-background-gradient-active;i;"#tab_background_gradient_activeo;	;;;@ø;"bottom;i;[ ;$i o;;i ;@;"/*disabled */;i";[ ;0;[ o;; [".o;	;{ ;"prefix;i#;"prefix"tab-disabled;@;i#;T;[u;5R[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei$:@operand2o:Sass::Script::Variable	;@:
+@name"tab-border-color;	i$:@underscored_name"tab_border_color:@operand1o;	;@;"tab-border-color-disabled;	i$;"tab_border_color_disabled0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-border-color-disabled;	i%;"tab_border_color_disabled;["border-color;	i%:@children[ :
+@tabsi o;; ["button;,o;-;." ;i(;/[o;0;/[o;1;.@⁄;i(;/[o;4	;30;.@⁄;["button;i(;@;i(;T;[	u;5![o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei):@operand2o:Sass::Script::Variable	;@:
+@name"tab-color;	i):@underscored_name"tab_color:@operand1o;	;@;"tab-color-disabled;	i);"tab_color_disabled0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-color-disabled;	i*;"tab_color_disabled;["
+color;	i*:@children[ :
+@tabsi u;5K[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei,:@operand2o:Sass::Script::Variable	;@:
+@name"tab-font-weight;	i,:@underscored_name"tab_font_weight:@operand1o;	;@;"tab-font-weight-disabled;	i,;"tab_font_weight_disabled0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-font-weight-disabled;	i-;"tab_font_weight_disabled;["font-weight;	i-:@children[ :
+@tabsi u;5=[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei/:@operand2o:Sass::Script::Variable	;@:
+@name"tab-font-size;	i/:@underscored_name"tab_font_size:@operand1o;	;@;"tab-font-size-disabled;	i/;"tab_font_size_disabled0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-font-size-disabled;	i0;"tab_font_size_disabled;["font-size;	i0:@children[ :
+@tabsi u;5K[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei2:@operand2o:Sass::Script::Variable	;@:
+@name"tab-font-family;	i2:@underscored_name"tab_font_family:@operand1o;	;@;"tab-font-family-disabled;	i2;"tab_font_family_disabled0[o:Sass::Tree::PropNode:@prop_syntax:new;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:@valueo;	;{ ;"tab-font-family-disabled;	i3;"tab_font_family_disabled;["font-family;	i3:@children[ :
+@tabsi ;$i ;$i o;; [".o;	;{ ;"prefix;i8;"prefix"tab-top-disabled;@;i8;T;[o;!;";#;@;o;;;;"	none;["background-image;i9;[ ;$i o;!;";#;@;o;;;;"transparent;["background;i:;[ ;$i o;;@;"background-gradient;i;;{ ;[o;	;{ ;"tab-base-color-disabled;i;;"tab_base_color_disabledo;	;@;"%tab-background-gradient-disabled;i;;"%tab_background_gradient_disabledo;	;;;@;"top;i;;[ ;$i o;; [".o;	;{ ;"prefix;i=;"prefix"tab-bottom-disabled;@;i=;T;[o;!;";#;@;o;;;;"	none;["background-image;i>;[ ;$i o;!;";#;@;o;;;;"transparent;["background;i?;[ ;$i o;;@;"background-gradient;i@;{ ;[o;	;{ ;"tab-base-color-disabled;i@;"tab_base_color_disabledo;	;@%;"%tab-background-gradient-disabled;i@;"%tab_background_gradient_disabledo;	;;;@%;"bottom;i@;[ ;$i u;5[o:Sass::Script::Operation
+:@operator:or:@options{ :
+@lineiC:@operand2o:Sass::Script::Variable	;@:
+@name"compile-all;	iC:@underscored_name"compile_all:@operand1o:!Sass::Script::UnaryOperation	;:not;@;	iC:@operando;	;@;"supports-gradients;	iC;"supports_gradients0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	iD;"prefix"nlg;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	iD:@has_childrenT:@children[	u:Sass::Tree::IfNodeB[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@lineiE:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"	null;	iE:@operand1o:Sass::Script::Variable	;@:
+@name"tab-background-gradient;	iE:@underscored_name"tab_background_gradient0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	iF;"prefix"tab-top;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	iF:@has_childrenT:@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;o:Sass::Script::Funcall
+;{ ;"theme-background-image;	iF:@keywords{ :
+@args[o;	;@;"theme-name;	iF;"theme_nameo;	;:string;@;"tab/tab-default-top-bg.gif;	iF;["background-image;	iF;[ :
+@tabsi ;!i o;;[".o;	;{ ;"prefix;	iG;"prefix"tab-bottom;@;	iG;T;[o;;;;@;o;
+;{ ;"theme-background-image;	iG;{ ;[o;	;@3;"theme-name;	iG;"theme_nameo;	;; ;@3;""tab/tab-default-bottom-bg.gif;	iG;["background-image;	iG;[ ;!i ;!i u;`[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@lineiJ:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"	null;	iJ:@operand1o:Sass::Script::Variable	;@:
+@name"!tab-background-gradient-over;	iJ:@underscored_name"!tab_background_gradient_over0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	iK;"prefix"tab-top-over;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	iK:@has_childrenT:@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;o:Sass::Script::Funcall
+;{ ;"theme-background-image;	iK:@keywords{ :
+@args[o;	;@;"theme-name;	iK;"theme_nameo;	;:string;@;"$tab/tab-default-top-over-bg.gif;	iK;["background-image;	iK;[ :
+@tabsi ;!i o;;[".o;	;{ ;"prefix;	iL;"prefix"tab-bottom-over;@;	iL;T;[o;;;;@;o;
+;{ ;"theme-background-image;	iL;{ ;[o;	;@3;"theme-name;	iL;"theme_nameo;	;; ;@3;"'tab/tab-default-bottom-over-bg.gif;	iL;["background-image;	iL;[ ;!i ;!i u;l[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@lineiO:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"	null;	iO:@operand1o:Sass::Script::Variable	;@:
+@name"#tab-background-gradient-active;	iO:@underscored_name"#tab_background_gradient_active0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	iP;"prefix"tab-top-active;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	iP:@has_childrenT:@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;o:Sass::Script::Funcall
+;{ ;"theme-background-image;	iP:@keywords{ :
+@args[o;	;@;"theme-name;	iP;"theme_nameo;	;:string;@;"&tab/tab-default-top-active-bg.gif;	iP;["background-image;	iP;[ :
+@tabsi ;!i o;;[".o;	;{ ;"prefix;	iQ;"prefix"tab-bottom-active;@;	iQ;T;[o;;;;@;o;
+;{ ;"theme-background-image;	iQ;{ ;[o;	;@3;"theme-name;	iQ;"theme_nameo;	;; ;@3;")tab/tab-default-bottom-active-bg.gif;	iQ;["background-image;	iQ;[ ;!i ;!i u;[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@lineiT:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"	null;	iT:@operand1o:Sass::Script::Variable	;@:
+@name"%tab-background-gradient-disabled;	iT:@underscored_name"%tab_background_gradient_disabled0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	iU;"prefix"tab-top-disabled;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	iU:@has_childrenT:@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;o:Sass::Script::List	:@separator:
+space;{ ;[o:Sass::Script::Funcall
+;@;"theme-background-image;	iU:@keywords{ :
+@args[o;	;@;"theme-name;	iU;"theme_nameo;	;:string;@;"(tab/tab-default-top-disabled-bg.gif;	iUo;	;;;@;"!important;	iU;	iU;["background-image;	iU;[ :
+@tabsi ;$i o;;[".o;	;{ ;"prefix;	iV;"prefix"tab-bottom-disabled;@;	iV;T;[o;;;;@;o;	;;;{ ;[o; 
+;@7;"theme-background-image;	iV;!{ ;"[o;	;@7;"theme-name;	iV;"theme_nameo;	;;#;@7;"+tab/tab-default-bottom-disabled-bg.gif;	iVo;	;;;@7;"!important;	iV;	iV;["background-image;	iV;[ ;$i ;$i :
+@tabsi o;; [".o;	;{ ;"prefix;i[;"prefix"tab-closable em;@;i[;T;[o;!;";#;@;o;:
+;;;<;{ ;i\;=o;(;)[ ;@:;*"3;i;i\;+@k;?o;	;@:;"tab-closable-icon-width;i\;"tab_closable_icon_width;["padding-right;i\;[ ;$i ;$i o;; [".o;	;{ ;"prefix;i_;"prefix"tab-close-btn;@;i_;T;[o;!;";#;@;o;;;;"absolute !important;["position;i`;[ ;$i o;!;";#;@;o;	;{ ;"tab-closable-icon-top;ia;"tab_closable_icon_top;["top;ia;[ ;$i o;!;";#;@;o;	;{ ;"tab-closable-icon-right;ib;"tab_closable_icon_right;["
+right;ib;[ ;$i o;!;";#;@;o;	;{ ;"tab-closable-icon-width;ic;"tab_closable_icon_width;["
+width;ic;[ ;$i o;!;";#;@;o;	;{ ;"tab-closable-icon-height;id;"tab_closable_icon_height;["height;id;[ ;$i o;!;";#;@;o;;;;"0;["font-size;ie;[ ;$i o;!;";#;@;o;;;;"0;["line-height;if;[ ;$i o;!;";#;@;o;(;)["px;{ ;*"-999px;i˛¸;ig;+[ ;["text-indent;ig;[ ;$i o;!;";#;@;o;;;;"no-repeat;["background;ih;[ ;$i o;!;";#;@;o;>
+;{ ;"theme-background-image;ii;{ ;[o;	;@ë;"theme-name;ii;"theme_nameo;	;@ë;"tab-closable-icon;ii;"tab_closable_icon;["background-image;ii;[ ;$i o;;@;"opacity;ij;{ ;[o;(;)[ ;{ ;*"0.6;f0.59999999999999998 33;ij;+@k;[ ;$i o;; [".o;	;{ ;"prefix;il;"prefix"tab-close-btn:hover;@;il;T;[o;;@;"opacity;im;{ ;[o;(;)[ ;{ ;*"1;i;im;+@k;[ ;$i u;5	2[o:Sass::Script::Operation
+:@operator:or:@options{ :
+@lineip:@operand2o:Sass::Script::Variable	;@:
+@name"compile-all;	ip:@underscored_name"compile_all:@operand1o:!Sass::Script::UnaryOperation	;:not;@;	ip:@operando;	;@;"supports-border-radius;	ip;"supports_border_radius0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	iq;"prefix"nbr;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	iq:@has_childrenT:@children[o;;[".o;	;{ ;"prefix;	ir;"prefix"tab-top-over;@;	ir;T;[o;;[".o;	;{ ;"prefix;	is;"prefix" frame-tl,
+                .o;	;{ ;"prefix;	it;"prefix" frame-bl,
+                .o;	;{ ;"prefix;	iu;"prefix" frame-tr,
+                .o;	;{ ;"prefix;	iv;"prefix" frame-br,
+                .o;	;{ ;"prefix;	iw;"prefix" frame-tc,
+                .o;	;{ ;"prefix;	ix;"prefix"frame-bc;@;	ix;T;[o:Sass::Tree::PropNode:@prop_syntax:new;@:@valueo:Sass::Script::Funcall
+;{ ;"theme-background-image;	iy:@keywords{ :
+@args[o;	;@I;"theme-name;	iy;"theme_nameo:Sass::Script::String	:
+@type:string;@I;")tab/tab-default-top-over-corners.gif;	iy;["background-image;	iy;[ :
+@tabsi ;#i o;;[
+".o;	;{ ;"prefix;	i{;"prefix" frame-ml,
+                .o;	;{ ;"prefix;	i|;"prefix"frame-mr;@;	i|;T;[o;;;;@;o;
+;{ ;"theme-background-image;	i};{ ;[o;	;@e;"theme-name;	i};"theme_nameo; 	;!;";@e;"'tab/tab-default-top-over-sides.gif;	i};["background-image;	i};[ ;#i ;#i u:Sass::Tree::IfNode˙[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"	null;	i:@operand1o:Sass::Script::Variable	;@:
+@name"!tab-background-gradient-over;	i:@underscored_name"!tab_background_gradient_over0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	iÄ;"prefix"frame-mc;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	iÄ:@has_childrenT:@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;o;	;{ ;"tab-base-color-over;	iÅ;"tab_base_color_over;["background-color;	iÅ;[ :
+@tabsi o;;;;@;o;;;;"repeat-x;["background-repeat;	iÇ;[ ;i o;;;;@;o:Sass::Script::Funcall
+;{ ;"theme-background-image;	iÉ:@keywords{ :
+@args[o;	;@*;"theme-name;	iÉ;"theme_nameo;	;:string;@*;"$tab/tab-default-top-over-bg.gif;	iÉ;["background-image;	iÉ;[ ;i ;i ;#i o;;[".o;	;{ ;"prefix;	ià;"prefix"tab-bottom-over;@;	ià;T;[o;;[".o;	;{ ;"prefix;	iâ;"prefix" frame-tl,
+                .o;	;{ ;"prefix;	iä;"prefix" frame-bl,
+                .o;	;{ ;"prefix;	iã;"prefix" frame-tr,
+                .o;	;{ ;"prefix;	iå;"prefix" frame-br,
+                .o;	;{ ;"prefix;	iç;"prefix" frame-tc,
+                .o;	;{ ;"prefix;	ié;"prefix"frame-bc;@;	ié;T;[o;;;;@;o;
+;{ ;"theme-background-image;	iè;{ ;[o;	;@ö;"theme-name;	iè;"theme_nameo; 	;!;";@ö;",tab/tab-default-bottom-over-corners.gif;	iè;["background-image;	iè;[ ;#i ;#i o;;[
+".o;	;{ ;"prefix;	ië;"prefix" frame-ml,
+                .o;	;{ ;"prefix;	ií;"prefix"frame-mr;@;	ií;T;[o;;;;@;o;
+;{ ;"theme-background-image;	iì;{ ;[o;	;@∂;"theme-name;	iì;"theme_nameo; 	;!;";@∂;"*tab/tab-default-bottom-over-sides.gif;	iì;["background-image;	iì;[ ;#i ;#i u;$˝[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@lineiï:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"	null;	iï:@operand1o:Sass::Script::Variable	;@:
+@name"!tab-background-gradient-over;	iï:@underscored_name"!tab_background_gradient_over0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	iñ;"prefix"frame-mc;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	iñ:@has_childrenT:@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;o;	;{ ;"tab-base-color-over;	ió;"tab_base_color_over;["background-color;	ió;[ :
+@tabsi o;;;;@;o;;;;"repeat-x;["background-repeat;	iò;[ ;i o;;;;@;o:Sass::Script::Funcall
+;{ ;"theme-background-image;	iô:@keywords{ :
+@args[o;	;@*;"theme-name;	iô;"theme_nameo;	;:string;@*;"'tab/tab-default-bottom-over-bg.gif;	iô;["background-image;	iô;[ ;i ;i ;#i o;;[".o;	;{ ;"prefix;	iû;"prefix"tab-top-active;@;	iû;T;[o;;[".o;	;{ ;"prefix;	iü;"prefix" frame-tl,
+                .o;	;{ ;"prefix;	i†;"prefix" frame-bl,
+                .o;	;{ ;"prefix;	i°;"prefix" frame-tr,
+                .o;	;{ ;"prefix;	i¢;"prefix" frame-br,
+                .o;	;{ ;"prefix;	i£;"prefix" frame-tc,
+                .o;	;{ ;"prefix;	i§;"prefix"frame-bc;@;	i§;T;[o;;;;@;o;
+;{ ;"theme-background-image;	i•;{ ;[o;	;@;"theme-name;	i•;"theme_nameo; 	;!;";@;"+tab/tab-default-top-active-corners.gif;	i•;["background-image;	i•;[ ;#i ;#i o;;[
+".o;	;{ ;"prefix;	iß;"prefix" frame-ml,
+                .o;	;{ ;"prefix;	i®;"prefix"frame-mr;@;	i®;T;[o;;;;@;o;
+;{ ;"theme-background-image;	i©;{ ;[o;	;@;"theme-name;	i©;"theme_nameo; 	;!;";@;")tab/tab-default-top-active-sides.gif;	i©;["background-image;	i©;[ ;#i ;#i u;$[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei´:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"	null;	i´:@operand1o:Sass::Script::Variable	;@:
+@name"#tab-background-gradient-active;	i´:@underscored_name"#tab_background_gradient_active0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	i¨;"prefix"frame-mc;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	i¨:@has_childrenT:@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;o;	;{ ;"tab-base-color-active;	i≠;"tab_base_color_active;["background-color;	i≠;[ :
+@tabsi o;;;;@;o;;;;"repeat-x;["background-repeat;	iÆ;[ ;i o;;;;@;o:Sass::Script::Funcall
+;{ ;"theme-background-image;	iØ:@keywords{ :
+@args[o;	;@*;"theme-name;	iØ;"theme_nameo;	;:string;@*;"&tab/tab-default-top-active-bg.gif;	iØ;["background-image;	iØ;[ ;i ;i ;#i o;;[".o;	;{ ;"prefix;	i¥;"prefix"tab-bottom-active;@;	i¥;T;[o;;[".o;	;{ ;"prefix;	iµ;"prefix" frame-tl,
+                .o;	;{ ;"prefix;	i∂;"prefix" frame-bl,
+                .o;	;{ ;"prefix;	i∑;"prefix" frame-tr,
+                .o;	;{ ;"prefix;	i∏;"prefix" frame-br,
+                .o;	;{ ;"prefix;	iπ;"prefix" frame-tc,
+                .o;	;{ ;"prefix;	i∫;"prefix"frame-bc;@;	i∫;T;[o;;;;@;o;
+;{ ;"theme-background-image;	iª;{ ;[o;	;@F;"theme-name;	iª;"theme_nameo; 	;!;";@F;".tab/tab-default-bottom-active-corners.gif;	iª;["background-image;	iª;[ ;#i ;#i o;;[
+".o;	;{ ;"prefix;	iΩ;"prefix" frame-ml,
+                .o;	;{ ;"prefix;	iæ;"prefix"frame-mr;@;	iæ;T;[o;;;;@;o;
+;{ ;"theme-background-image;	iø;{ ;[o;	;@b;"theme-name;	iø;"theme_nameo; 	;!;";@b;",tab/tab-default-bottom-active-sides.gif;	iø;["background-image;	iø;[ ;#i ;#i u;$[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei¡:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"	null;	i¡:@operand1o:Sass::Script::Variable	;@:
+@name"#tab-background-gradient-active;	i¡:@underscored_name"#tab_background_gradient_active0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	i¬;"prefix"frame-mc;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	i¬:@has_childrenT:@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;o;	;{ ;"tab-base-color-active;	i√;"tab_base_color_active;["background-color;	i√;[ :
+@tabsi o;;;;@;o;;;;"repeat-x;["background-repeat;	iƒ;[ ;i o;;;;@;o:Sass::Script::Funcall
+;{ ;"theme-background-image;	i≈:@keywords{ :
+@args[o;	;@*;"theme-name;	i≈;"theme_nameo;	;:string;@*;")tab/tab-default-bottom-active-bg.gif;	i≈;["background-image;	i≈;[ ;i ;i ;#i o;;[".o;	;{ ;"prefix;	i ;"prefix"tab-top-disabled;@;	i ;T;[o;;[".o;	;{ ;"prefix;	iÀ;"prefix" frame-tl,
+                .o;	;{ ;"prefix;	iÃ;"prefix" frame-bl,
+                .o;	;{ ;"prefix;	iÕ;"prefix" frame-tr,
+                .o;	;{ ;"prefix;	iŒ;"prefix" frame-br,
+                .o;	;{ ;"prefix;	iœ;"prefix" frame-tc,
+                .o;	;{ ;"prefix;	i–;"prefix"frame-bc;@;	i–;T;[o;;;;@;o;
+;{ ;"theme-background-image;	i—;{ ;[o;	;@ú;"theme-name;	i—;"theme_nameo; 	;!;";@ú;"-tab/tab-default-top-disabled-corners.gif;	i—;["background-image;	i—;[ ;#i ;#i o;;[
+".o;	;{ ;"prefix;	i”;"prefix" frame-ml,
+                .o;	;{ ;"prefix;	i‘;"prefix"frame-mr;@;	i‘;T;[o;;;;@;o;
+;{ ;"theme-background-image;	i’;{ ;[o;	;@∏;"theme-name;	i’;"theme_nameo; 	;!;";@∏;"+tab/tab-default-top-disabled-sides.gif;	i’;["background-image;	i’;[ ;#i ;#i u;$ò[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@linei◊:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"	null;	i◊:@operand1o:Sass::Script::Variable	;@:
+@name"%tab-background-gradient-disabled;	i◊:@underscored_name"%tab_background_gradient_disabled0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	iÿ;"prefix"frame-mc;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	iÿ:@has_childrenT:@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;o;;;;"repeat-x;["background-repeat;	iŸ;[ :
+@tabsi o;;;;@;o:Sass::Script::Funcall
+;{ ;"theme-background-image;	i⁄:@keywords{ :
+@args[o;	;@";"theme-name;	i⁄;"theme_nameo;	;:string;@";"(tab/tab-default-top-disabled-bg.gif;	i⁄;["background-image;	i⁄;[ ;i ;i ;#i o;;[".o;	;{ ;"prefix;	iﬂ;"prefix"tab-bottom-disabled;@;	iﬂ;T;[o;;[".o;	;{ ;"prefix;	i‡;"prefix" frame-tl,
+                .o;	;{ ;"prefix;	i·;"prefix" frame-bl,
+                .o;	;{ ;"prefix;	i‚;"prefix" frame-tr,
+                .o;	;{ ;"prefix;	i„;"prefix" frame-br,
+                .o;	;{ ;"prefix;	i‰;"prefix" frame-tc,
+                .o;	;{ ;"prefix;	iÂ;"prefix"frame-bc;@;	iÂ;T;[o;;;;@;o;
+;{ ;"theme-background-image;	iÊ;{ ;[o;	;@Ú;"theme-name;	iÊ;"theme_nameo; 	;!;";@Ú;"0tab/tab-default-bottom-disabled-corners.gif;	iÊ;["background-image;	iÊ;[ ;#i ;#i o;;[
+".o;	;{ ;"prefix;	iË;"prefix" frame-ml,
+                .o;	;{ ;"prefix;	iÈ;"prefix"frame-mr;@;	iÈ;T;[o;;;;@;o;
+;{ ;"theme-background-image;	iÍ;{ ;[o;	;@;"theme-name;	iÍ;"theme_nameo; 	;!;";@;".tab/tab-default-bottom-disabled-sides.gif;	iÍ;["background-image;	iÍ;[ ;#i ;#i u;$õ[o:Sass::Script::Operation
+:@operator:neq:@options{ :
+@lineiÏ:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"	null;	iÏ:@operand1o:Sass::Script::Variable	;@:
+@name"%tab-background-gradient-disabled;	iÏ:@underscored_name"%tab_background_gradient_disabled0[o:Sass::Tree::RuleNode:
+@rule[".o;	;{ ;"prefix;	iÌ;"prefix"frame-mc;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;	iÌ:@has_childrenT:@children[o:Sass::Tree::PropNode:@prop_syntax:new;@;o;;;;"repeat-x;["background-repeat;	iÓ;[ :
+@tabsi o;;;;@;o:Sass::Script::Funcall
+;{ ;"theme-background-image;	iÔ:@keywords{ :
+@args[o;	;@";"theme-name;	iÔ;"theme_nameo;	;:string;@";"+tab/tab-default-bottom-disabled-bg.gif;	iÔ;["background-image;	iÔ;[ ;i ;i ;#i ;#i 

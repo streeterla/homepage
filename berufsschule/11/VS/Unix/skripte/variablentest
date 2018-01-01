@@ -1,0 +1,4 @@
+if test "$1" = 5
+then echo "fuenf"
+else echo "nicht fuenf"
+fi

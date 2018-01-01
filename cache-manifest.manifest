@@ -1,0 +1,6 @@
+CACHE MANIFEST
+about.html
+offline.html
+
+FALLBACK:
+/ offline.html

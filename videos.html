@@ -1,0 +1,46 @@
+<!-- videos functions -->
+<script src="javascript/video.js"></script>
+<!-- mozilla popcorn plugin -->
+<script src="javascript/popcorn-complete.min.js"></script>
+<script>
+//	$(document).ready(function()
+//	{
+		document.addEventListener("DOMContentLoaded", function()
+		{
+			var myVideo = Popcorn("#video");
+			myVideo.footnote(
+			{
+				start: 8,
+				end: 20,
+				text: "baaahm!",
+				target: "videofooter"
+			});
+			myVideo.play();
+		}, false);
+//	});
+</script>
+<div id="videos">
+	<h2>Videos</h2>	
+	<video id="video" src="./videos/NHL_Eishockey_Fight.ogg" width="480" height="385" type="video/ogg" control="true">
+		<a href="./videos/NHL_Eishockey_Fight.ogg">Download</a>
+	</video>
+	<p>
+	<button id="start" onclick="start()">Start/Pause</button>
+	<button id="stumm" onclick="stumm()">Stummschalten</button>
+	<button id="lauter" onclick="lauter()">Lauter</button>
+	<button id="leiser" onclick="leiser()">Leiser</button>
+	<button id="schneller" onclick="schneller()">Schneller</button>
+	<button id="langsamer" onclick="langsamer()">Langsamer</button>
+	<br />		Zeit in Sekunden: <input type="number" id="zeit" min="0"/>
+	<button id="springe" onclick="springeZu()">Springe zu</button>
+	<button id="standard" onclick="standard()">Standartwerte</button>
+	<br />		Video w&auml;len:
+	<select id="auswahl">
+		<option value="./videos/NHL_Eishockey_Fight.ogg">NHL Fight</option>
+		<option value="./videos/Wildlife.ogg">Wildlife</option>
+	</select>
+	<button id="laden" onclick="loadVideo()">Video laden</button>
+	<br />
+	<div id="videofooter"></div>
+	</p>
+</div>

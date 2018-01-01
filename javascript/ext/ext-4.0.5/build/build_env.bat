@@ -1,0 +1,1 @@
+sencha build -p C:\tv1\workspace\contentforce\contentforce\js\ext-4.0.5\build\ext-env.jsb3 -d C:\tv1\workspace\contentforce\contentforce\js\ext-4.0.5\builds

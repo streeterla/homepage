@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "Hochzeitsfotos"
+#AuthUserFile /hp/bo/ac/op/access/.htusers
+#Require user KerstinMartin
+
+
+

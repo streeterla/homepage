@@ -1,0 +1,1 @@
+echo Der Eigentuemer besitzt fuer `ls -a | grep ^-..x' | wc -l` Dateien das Ausfuehrungsrecht

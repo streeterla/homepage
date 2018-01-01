@@ -1,0 +1,10 @@
+echo
+echo
+echo Herzlich willkommen im System
+echo
+echo Uhrzeit: `date +%H:%M`
+echo Anzahl der angemeldeten User: `who | wc -l`
+echo
+echo Viel Spass beim Arbeiten
+echo
+echo

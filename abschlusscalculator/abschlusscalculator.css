@@ -1,0 +1,68 @@
+body
+{
+	font-family:helvetica;
+	background-color:#000000;
+	color:#ffffff;
+}
+
+header
+{
+	text-align:center;
+	margin-top:50px;
+	margin-bottom:50px;
+	font-size:30px;
+	border: 2px inset white;
+	margin-left:20pt;
+	margin-right:20pt;
+}
+
+footer
+{
+	text-align:right;
+	font-size:small;
+	margin-top:100px;
+	padding-right:5pt;
+	padding-bottom:5pt;
+	color:#333333;
+}
+
+div#calc
+{
+	border:1px solid white;
+	border-radius:50px;
+	text-align:center;
+	width:80px;
+	margin-left:40%;
+}
+
+div#wrapper
+{
+	border:5px dotted white;
+	margin-left:20%;
+	margin-right:20%;
+	margin-top:10%;
+}
+
+input
+{
+	background-color:yellow;
+}
+input:focus
+{
+	background-color:red;
+}
+
+.roundbutton input
+{
+	border-radius:5px;
+	border: 2px outset white;
+}
+.roundbutton input:hover
+{
+	cursor:pointer;
+}
+div#ok input:hover
+{
+	cursor:pointer;
+}
+

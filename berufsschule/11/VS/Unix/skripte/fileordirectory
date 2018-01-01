@@ -1,0 +1,4 @@
+if test -d "$1"
+then `echo ls -l $1`
+else `echo cat "$1"`
+fi

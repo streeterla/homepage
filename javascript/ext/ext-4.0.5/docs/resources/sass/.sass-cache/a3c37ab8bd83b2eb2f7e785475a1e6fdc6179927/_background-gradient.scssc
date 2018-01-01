@@ -1,0 +1,377 @@
+3.1.1 (Brainy Betty)
+b8b8b634921be056428977ff256d43e93f30ce14
+o:Sass::Tree::RootNode
+:@template"A/**
+ * @mixin background-gradient
+ * 
+ * @param {Color} $background-color The background color of the gradient
+ * @param {String/List} $type The type of gradient to be used. Can either be a String which is a predefined gradient, or it can
+ *                            can be a list of color_stops. If none is set, it will still set the `background-color` to the $background-color.
+ * @param {String} $direction The direction of the gradient. Can either me `top` or `left`. (defaults to `top`)
+ */
+@mixin background-gradient($bg-color, $type: $base-gradient, $direction: top) {
+    background-image: none;
+    background-color: $bg-color;
+    
+    @if $base-gradient != null and $bg-color != transparent {
+        //color_stops
+        @if type-of($type) == "list" {
+            @include background-image(linear-gradient($direction, $type));
+        }
+        
+        //default gradients
+        @else if $type == bevel {
+            @include background-image(linear-gradient($direction, color_stops(
+                lighten($bg-color, 15%), 
+                lighten($bg-color, 8%) 30%, 
+                $bg-color 65%, 
+                darken($bg-color, 6%)
+            )));
+        } @else if $type == glossy {
+            @include background-image(linear-gradient($direction, color_stops(lighten($bg-color, 15%), lighten($bg-color, 5%) 50%, $bg-color 51%, darken($bg-color, 5%))));
+        } @else if $type == recessed {
+            @include background-image(linear-gradient($direction, color_stops(darken($bg-color, 10%), darken($bg-color, 5%) 10%, $bg-color 65%, lighten($bg-color, .5%))));
+        } @else if $type == matte {
+            @include background-image(linear-gradient($direction, color_stops(lighten($bg-color, 3%), darken($bg-color, 4%))));
+        } @else if $type == matte-reverse {
+            @include background-image(linear-gradient($direction, color_stops(darken($bg-color, 6%), lighten($bg-color, 4%))));
+        } @else if $type == glossy-toolbar {
+            @include background-image(linear-gradient($direction, color_stops(#F0F5FA, #DAE6F4 2%, #CEDDEF)));
+        }
+        
+        //ext3.3 gradients
+        @else if $type == panel-header {
+            @include background-image(linear-gradient($direction, color_stops(
+                adjust-color($bg-color, $hue: -0.857deg, $saturation: -1.63%, $lightness: 3.529%), 
+                adjust-color($bg-color, $hue: 0.158deg, $saturation: -1.21%, $lightness: 0.392%) 45%, 
+                adjust-color($bg-color, $hue: 1.154deg, $saturation: 0.607%, $lightness: -7.647%) 46%,
+                adjust-color($bg-color, $hue: 1.154deg, $saturation: 0.607%, $lightness: -7.647%) 50%,
+                adjust-color($bg-color, $hue: 1.444deg, $saturation: -1.136%, $lightness: -4.706%) 51%,
+                $bg-color
+            )));
+        } @else if $type == tabbar {
+            @include background-image(linear-gradient($direction, color_stops(
+                adjust-color($bg-color, $hue: 0.0deg, $saturation: 1.604%, $lightness: 4.706%),
+                $bg-color
+            )));
+        } @else if $type == tab {
+            @include background-image(linear-gradient($direction, color_stops(
+                adjust-color($bg-color, $hue: 1.382deg, $saturation: -18.571%, $lightness: -4.902%),
+                adjust-color($bg-color, $hue: 0.43deg, $saturation: -10.311%, $lightness: -2.157%) 25%,
+                $bg-color 45%
+            )));
+        } @else if $type == tab-active {
+            @include background-image(linear-gradient($direction, color_stops(
+                adjust-color($bg-color, $hue: -212.903deg, $saturation: -88.571%, $lightness: 6.863%),
+                adjust-color($bg-color, $hue: 0.43deg, $saturation: -6.753%, $lightness: 4.706%) 25%,
+                $bg-color 45%
+            )));
+        } @else if $type == tab-over {
+            @include background-image(linear-gradient($direction, color_stops(
+                adjust-color($bg-color, $hue: 4.462deg, $saturation: -9.524%, $lightness: -3.725%),
+                adjust-color($bg-color, $hue: 2.272deg, $saturation: 0.0%, $lightness: -1.569%) 25%,
+                $bg-color 45%
+            )));
+        } @else if $type == tab-disabled {
+            @include background-image(linear-gradient($direction, color_stops(
+                $bg-color,
+                adjust-color($bg-color, $hue: -0.267deg, $saturation: 18.571%, $lightness: 2.941%)
+            )));
+        } @else if $type == grid-header {
+            @include background-image(linear-gradient($direction, color_stops(
+                adjust-color($bg-color, $hue: 0deg, $saturation: 0%, $lightness: 20.392%),
+                adjust-color($bg-color, $hue: 220.0deg, $saturation: 5.66%, $lightness: 12.353%)
+            )));
+        } @else if $type == grid-header-over {
+            @include background-image(linear-gradient($direction, color_stops(
+                adjust-color($bg-color, $hue: 0.175deg, $saturation: 0.967%, $lightness: 14.118%),
+                adjust-color($bg-color, $hue: 0.175deg, $saturation: 0.967%, $lightness: 14.118%) 39%,
+                adjust-color($bg-color, $hue: 0.372deg, $saturation: 0.101%, $lightness: 10.196%) 40%,
+                adjust-color($bg-color, $hue: 0.372deg, $saturation: 0.101%, $lightness: 10.196%)
+            )));
+        } @else if $type == grid-row-over {
+            @include background-image(linear-gradient($direction, color_stops(
+                adjust-color($bg-color, $hue: 0.175deg, $saturation: 0.967%, $lightness: 14.118%),
+                $bg-color
+            )));
+        } @else if $type == grid-cell-special {
+            @include background-image(linear-gradient(left, color_stops(
+                $bg-color,
+                darken($bg-color, 5)
+            )));
+        } @else if $type == glossy-button or $type == glossy-button-disabled {
+            @include background-image(linear-gradient($direction, color_stops(
+                $bg-color,
+                adjust-color($bg-color, $hue: 0deg, $saturation: 0%, $lightness: -2.353%) 48%,
+                adjust-color($bg-color, $hue: 0deg, $saturation: 0%, $lightness: -11.373%) 52%,
+                adjust-color($bg-color, $hue: 0deg, $saturation: 0%, $lightness: -9.412%)
+            )));
+        } @else if $type == glossy-button-over {
+            @include background-image(linear-gradient($direction, color_stops(
+                $bg-color,
+                adjust-color($bg-color, $hue: 1.754deg, $saturation: 0.0%, $lightness: -2.157%) 48%,
+                adjust-color($bg-color, $hue: 5.833deg, $saturation: -35.135%, $lightness: -9.216%) 52%,
+                adjust-color($bg-color, $hue: 5.833deg, $saturation: -27.273%, $lightness: -7.647%)
+            )));
+        } @else if $type == glossy-button-pressed {
+            @include background-image(linear-gradient($direction, color_stops(
+                $bg-color,
+                adjust-color($bg-color, $hue: -1.839deg, $saturation: -2.18%, $lightness: 2.157%) 48%,
+                adjust-color($bg-color, $hue: -2.032deg, $saturation: 37.871%, $lightness: -4.706%) 52%,
+                adjust-color($bg-color, $hue: -1.641deg, $saturation: 36.301%, $lightness: -2.549%)
+            )));
+        }
+    }
+}:@options{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets:
+@linei:@has_childrenT:@children[o:Sass::Tree::CommentNode:@silent0;@:@value"Ò/**
+ * @mixin background-gradient
+ * 
+ * @param {Color} $background-color The background color of the gradient
+ * @param {String/List} $type The type of gradient to be used. Can either be a String which is a predefined gradient, or it can
+ *                            can be a list of color_stops. If none is set, it will still set the `background-color` to the $background-color.
+ * @param {String} $direction The direction of the gradient. Can either me `top` or `left`. (defaults to `top`)
+ */;i:@lines[ :
+@loud0;[ o:Sass::Tree::MixinDefNode;@:
+@name"background-gradient;i:
+@args[[o:Sass::Script::Variable;{ ;"bg-color:@underscored_name"bg_color0[o;;@;"	type;"	typeo;	;@;"base-gradient;i;"base_gradient[o;;@;"direction;"directiono:Sass::Script::String	:
+@type:identifier;@;"top;i;T;[o:Sass::Tree::PropNode:@prop_syntax:new;@;o;;;;"	none;["background-image;i;[ :
+@tabsi o;;;;@;o;	;{ ;"bg-color;i;"bg_color;["background-color;i;[ ;i u:Sass::Tree::IfNode∑e[o:Sass::Script::Operation
+:@operator:and:@options{ :
+@linei:@operand2o; 
+;:neq;@;	i;
+o:Sass::Script::String	:
+@type:identifier;@:@value"transparent;	i:@operand1o:Sass::Script::Variable	;@:
+@name"bg-color;	i:@underscored_name"bg_color;o; 
+;;;@;	i;
+o;	;;;@;"	null;	i;o;	;@;"base-gradient;	i;"base_gradient0[o:Sass::Tree::CommentNode:@silenti ;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"/*color_stops */;	i:@lines[ :
+@loud0:@children[ u:Sass::Tree::IfNode<c[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei:@operand2o:Sass::Script::String	:
+@type:string;@:@value"	list;	i:@operand1o:Sass::Script::Funcall
+;@:
+@name"type-of;	i:@keywords{ :
+@args[o:Sass::Script::Variable	;@;"	type;	i:@underscored_name"	typeu:Sass::Tree::IfNode≥`[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"
+bevel;	i:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	i:@underscored_name"	typeu:Sass::Tree::IfNode!\[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei :@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"glossy;	i :@operand1o:Sass::Script::Variable	;@:
+@name"	type;	i :@underscored_name"	typeu:Sass::Tree::IfNodeéW[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei":@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"recessed;	i":@operand1o:Sass::Script::Variable	;@:
+@name"	type;	i":@underscored_name"	typeu:Sass::Tree::IfNodeıR[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei$:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"
+matte;	i$:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	i$:@underscored_name"	typeu:Sass::Tree::IfNodeyO[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei&:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"matte-reverse;	i&:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	i&:@underscored_name"	typeu:Sass::Tree::IfNodeıK[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei(:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"glossy-toolbar;	i(:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	i(:@underscored_name"	typeu:Sass::Tree::IfNodeEH[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei-:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"panel-header;	i-:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	i-:@underscored_name"	typeu:Sass::Tree::IfNode?[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei6:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"tabbar;	i6:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	i6:@underscored_name"	typeu:Sass::Tree::IfNode>;[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei;:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"tab;	i;:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	i;:@underscored_name"	typeu:Sass::Tree::IfNodeΩ5[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@lineiA:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"tab-active;	iA:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	iA:@underscored_name"	typeu:Sass::Tree::IfNode0[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@lineiG:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"tab-over;	iG:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	iG:@underscored_name"	typeu:Sass::Tree::IfNodeß*[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@lineiM:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"tab-disabled;	iM:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	iM:@underscored_name"	typeu:Sass::Tree::IfNode≠&[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@lineiR:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"grid-header;	iR:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	iR:@underscored_name"	typeu:Sass::Tree::IfNode"[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@lineiW:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"grid-header-over;	iW:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	iW:@underscored_name"	typeu:Sass::Tree::IfNode≤[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@linei^:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"grid-row-over;	i^:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	i^:@underscored_name"	typeu:Sass::Tree::IfNodeƒ[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@lineic:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"grid-cell-special;	ic:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	ic:@underscored_name"	typeu:Sass::Tree::IfNodeé[o:Sass::Script::Operation
+:@operator:or:@options{ :
+@lineih:@operand2o; 
+;:eq;@;	ih;
+o:Sass::Script::String	:
+@type:identifier;@:@value"glossy-button-disabled;	ih:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	ih:@underscored_name"	type;o; 
+;;;@;	ih;
+o;	;;;@;"glossy-button;	ih;o;	;@;"	type;	ih;"	typeu:Sass::Tree::IfNode˝[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@lineio:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"glossy-button-over;	io:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	io:@underscored_name"	typeu:Sass::Tree::IfNodez[o:Sass::Script::Operation
+:@operator:eq:@options{ :
+@lineiv:@operand2o:Sass::Script::String	:
+@type:identifier;@:@value"glossy-button-pressed;	iv:@operand1o:Sass::Script::Variable	;@:
+@name"	type;	iv:@underscored_name"	type0[o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i|:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i|;{ ;[o;	;@;"direction;	iw;"directiono;
+;@;"color_stops;	i|;{ ;[	o;	;@;"bg-color;	ix;"bg_coloro:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"adjust-color;	iy;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"2.157%;f2.157 ∆®;	iy:@denominator_units[ "hueo;;["deg;@;"-1.839deg;f-1.839 Å;	iy; [ "saturationo;;["%;@;"-2.18%;f-2.1800000000000002 =q;	iy; [ ;[o;	;@;"bg-color;	iy;"bg_coloro;;["%;@;"48%;i5;	iy; [ ;	ixo;	;;;@;[o;
+;@;"adjust-color;	iz;{"lightnesso;;["%;@;"-4.706%;f-4.7060000000000004 Ám;	iz; [ "hueo;;["deg;@;"-2.032deg;f-2.032 ∆®;	iz; [ "saturationo;;["%;@;"37.871%;f37.871000000000002 hs;	iz; [ ;[o;	;@;"bg-color;	iz;"bg_coloro;;["%;@;"52%;i9;	iz; [ ;	iyo;
+;@;"adjust-color;	i{;{"lightnesso;;["%;@;"-2.549%;f-2.5489999999999999 1;	i{; [ "hueo;;["deg;@;"-1.641deg;f-1.641 ∆®;	i{; [ "saturationo;;["%;@;"36.301%;f36.301000000000002 J;	i{; [ ;[o;	;@;"bg-color;	i{;"bg_color:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	iu:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	iu;{ ;[o;	;@;"direction;	ip;"directiono;
+;@;"color_stops;	iu;{ ;[	o;	;@;"bg-color;	iq;"bg_coloro:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"adjust-color;	ir;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"-2.157%;f-2.157 ∆®;	ir:@denominator_units[ "hueo;;["deg;@; "1.754deg;f1.754 Ò™;	ir;![ "saturationo;;["%;@; "0%;f0;	ir;![ ;[o;	;@;"bg-color;	ir;"bg_coloro;;["%;@; "48%;i5;	ir;![ ;	iqo;	;;;@;[o;
+;@;"adjust-color;	is;{"lightnesso;;["%;@; "-9.216%;f-9.2159999999999993 ﬂ;;	is;![ "hueo;;["deg;@; "5.833deg;f5.8330000000000002 E¢;	is;![ "saturationo;;["%;@; "-35.135%;f-35.134999999999998 z·;	is;![ ;[o;	;@;"bg-color;	is;"bg_coloro;;["%;@; "52%;i9;	is;![ ;	iro;
+;@;"adjust-color;	it;{"lightnesso;;["%;@; "-7.647%;f-7.6470000000000002 J;	it;![ "hueo;;["deg;@; "5.833deg;f5.8330000000000002 E¢;	it;![ "saturationo;;["%;@; "-27.273%;f-27.273 ŒŸ;	it;![ ;[o;	;@;"bg-color;	it;"bg_color:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	in:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	in;{ ;[o;	;@;"direction;	ii;"directiono;
+;@;"color_stops;	in;{ ;[	o;	;@;"bg-color;	ij;"bg_coloro:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"adjust-color;	ik;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"-2.353%;f-2.3530000000000002 Ám;	ik:@denominator_units[ "hueo;; ["deg;@;!"	0deg;i ;	ik;"[ "saturationo;; ["%;@;!"0%;i ;	ik;"[ ;[o;	;@;"bg-color;	ik;"bg_coloro;; ["%;@;!"48%;i5;	ik;"[ ;	ijo;	;;;@;[o;
+;@;"adjust-color;	il;{"lightnesso;; ["%;@;!"-11.373%;f-11.372999999999999 –Â;	il;"[ "hueo;; ["deg;@;!"	0deg;i ;	il;"[ "saturationo;; ["%;@;!"0%;i ;	il;"[ ;[o;	;@;"bg-color;	il;"bg_coloro;; ["%;@;!"52%;i9;	il;"[ ;	iko;
+;@;"adjust-color;	im;{"lightnesso;; ["%;@;!"-9.412%;f-9.4120000000000008 Ám;	im;"[ "hueo;; ["deg;@;!"	0deg;i ;	im;"[ "saturationo;; ["%;@;!"0%;i ;	im;"[ ;[o;	;@;"bg-color;	im;"bg_color:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	ig:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	ig;{ ;[o;	;;;@;"	left;	ido;
+;@;"color_stops;	ig;{ ;[o;	;@;"bg-color;	ie;"bg_coloro;
+;@;"darken;	if;{ ;[o;	;@;"bg-color;	if;"bg_coloro:Sass::Script::Number:@numerator_units[ ;@:@original"5;i
+;	if:@denominator_units[ :@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	ib:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	ib;{ ;[o;	;@;"direction;	i_;"directiono;
+;@;"color_stops;	ib;{ ;[o;
+;@;"adjust-color;	i`;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"14.118%;f14.118 €#;	i`:@denominator_units[ "hueo;;["deg;@;"0.175deg;f0.17499999999999999 ff;	i`;[ "saturationo;;["%;@;"0.967%;f0.96699999999999997 lã;	i`;[ ;[o;	;@;"bg-color;	i`;"bg_coloro;	;@;"bg-color;	ia;"bg_color:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i]:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i];{ ;[o;	;@;"direction;	iX;"directiono;
+;@;"color_stops;	i];{ ;[	o;
+;@;"adjust-color;	iY;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"14.118%;f14.118 €#;	iY:@denominator_units[ "hueo;;["deg;@;"0.175deg;f0.17499999999999999 ff;	iY;[ "saturationo;;["%;@;"0.967%;f0.96699999999999997 lã;	iY;[ ;[o;	;@;"bg-color;	iY;"bg_coloro:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"adjust-color;	iZ;{"lightnesso;;["%;@;"14.118%;f14.118 €#;	iZ;[ "hueo;;["deg;@;"0.175deg;f0.17499999999999999 ff;	iZ;[ "saturationo;;["%;@;"0.967%;f0.96699999999999997 lã;	iZ;[ ;[o;	;@;"bg-color;	iZ;"bg_coloro;;["%;@;"39%;i,;	iZ;[ ;	iYo;	; ;!;@;[o;
+;@;"adjust-color;	i[;{"lightnesso;;["%;@;"10.196%;f10.196 1;	i[;[ "hueo;;["deg;@;"0.372deg;f0.372 +;	i[;[ "saturationo;;["%;@;"0.101%;f0.10100000000000001 `B;	i[;[ ;[o;	;@;"bg-color;	i[;"bg_coloro;;["%;@;"40%;i-;	i[;[ ;	iZo;
+;@;"adjust-color;	i\;{"lightnesso;;["%;@;"10.196%;f10.196 1;	i\;[ "hueo;;["deg;@;"0.372deg;f0.372 +;	i\;[ "saturationo;;["%;@;"0.101%;f0.10100000000000001 `B;	i\;[ ;[o;	;@;"bg-color;	i\;"bg_color:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	iV:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	iV;{ ;[o;	;@;"direction;	iS;"directiono;
+;@;"color_stops;	iV;{ ;[o;
+;@;"adjust-color;	iT;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"20.392%;f20.391999999999999 1;	iT:@denominator_units[ "hueo;;["deg;@;"	0deg;i ;	iT;[ "saturationo;;["%;@;"0%;i ;	iT;[ ;[o;	;@;"bg-color;	iT;"bg_coloro;
+;@;"adjust-color;	iU;{"lightnesso;;["%;@;"12.353%;f12.353 ˘€;	iU;[ "hueo;;["deg;@;"220deg;f220;	iU;[ "saturationo;;["%;@;"
+5.66%;f5.6600000000000001 p§;	iU;[ ;[o;	;@;"bg-color;	iU;"bg_color:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	iQ:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	iQ;{ ;[o;	;@;"direction;	iN;"directiono;
+;@;"color_stops;	iQ;{ ;[o;	;@;"bg-color;	iO;"bg_coloro;
+;@;"adjust-color;	iP;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"2.941%;f2.9409999999999998 I∫;	iP:@denominator_units[ "hueo;;["deg;@;"-0.267deg;f-0.26700000000000002 J;	iP;[ "saturationo;;["%;@;"18.571%;f18.571000000000002 ;	iP;[ ;[o;	;@;"bg-color;	iP;"bg_color:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	iL:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	iL;{ ;[o;	;@;"direction;	iH;"directiono;
+;@;"color_stops;	iL;{ ;[o;
+;@;"adjust-color;	iI;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"-3.725%;f-3.7250000000000001 ÃÕ;	iI:@denominator_units[ "hueo;;["deg;@;"4.462deg;f4.4619999999999997 ;	iI;[ "saturationo;;["%;@;"-9.524%;f-9.5239999999999991 5?;	iI;[ ;[o;	;@;"bg-color;	iI;"bg_coloro:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"adjust-color;	iJ;{"lightnesso;;["%;@;"-1.569%;f-1.569 »¥;	iJ;[ "hueo;;["deg;@;"2.272deg;f2.2719999999999998 ì;	iJ;[ "saturationo;;["%;@;"0%;f0;	iJ;[ ;[o;	;@;"bg-color;	iJ;"bg_coloro;;["%;@;"25%;i;	iJ;[ ;	iIo;	; ;!;@;[o;	;@;"bg-color;	iK;"bg_coloro;;["%;@;"45%;i2;	iK;[ ;	iJ:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	iF:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	iF;{ ;[o;	;@;"direction;	iB;"directiono;
+;@;"color_stops;	iF;{ ;[o;
+;@;"adjust-color;	iC;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"6.863%;f6.8630000000000004  ¡;	iC:@denominator_units[ "hueo;;["deg;@;"-212.903deg;f-212.90299999999999 â7;	iC;[ "saturationo;;["%;@;"-88.571%;f-88.570999999999998 Å;	iC;[ ;[o;	;@;"bg-color;	iC;"bg_coloro:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"adjust-color;	iD;{"lightnesso;;["%;@;"4.706%;f4.7060000000000004 Ám;	iD;[ "hueo;;["deg;@;"0.43deg;f0.42999999999999999 ÎÖ;	iD;[ "saturationo;;["%;@;"-6.753%;f-6.7530000000000001 çP;	iD;[ ;[o;	;@;"bg-color;	iD;"bg_coloro;;["%;@;"25%;i;	iD;[ ;	iCo;	; ;!;@;[o;	;@;"bg-color;	iE;"bg_coloro;;["%;@;"45%;i2;	iE;[ ;	iD:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i@:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i@;{ ;[o;	;@;"direction;	i<;"directiono;
+;@;"color_stops;	i@;{ ;[o;
+;@;"adjust-color;	i=;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"-4.902%;f-4.9020000000000001 ˜œ;	i=:@denominator_units[ "hueo;;["deg;@;"1.382deg;f1.3819999999999999 &È;	i=;[ "saturationo;;["%;@;"-18.571%;f-18.571000000000002 ;	i=;[ ;[o;	;@;"bg-color;	i=;"bg_coloro:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"adjust-color;	i>;{"lightnesso;;["%;@;"-2.157%;f-2.157 ∆®;	i>;[ "hueo;;["deg;@;"0.43deg;f0.42999999999999999 ÎÖ;	i>;[ "saturationo;;["%;@;"-10.311%;f-10.311 ¨;	i>;[ ;[o;	;@;"bg-color;	i>;"bg_coloro;;["%;@;"25%;i;	i>;[ ;	i=o;	; ;!;@;[o;	;@;"bg-color;	i?;"bg_coloro;;["%;@;"45%;i2;	i?;[ ;	i>:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i::@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i:;{ ;[o;	;@;"direction;	i7;"directiono;
+;@;"color_stops;	i:;{ ;[o;
+;@;"adjust-color;	i8;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"4.706%;f4.7060000000000004 Ám;	i8:@denominator_units[ "hueo;;["deg;@;"	0deg;f0;	i8;[ "saturationo;;["%;@;"1.604%;f1.6040000000000001 ãD;	i8;[ ;[o;	;@;"bg-color;	i8;"bg_coloro;	;@;"bg-color;	i9;"bg_color:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i5:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i5;{ ;[o;	;@;"direction;	i.;"directiono;
+;@;"color_stops;	i5;{ ;[o;
+;@;"adjust-color;	i/;{"lightnesso:Sass::Script::Number:@numerator_units["%;@:@original"3.529%;f3.5289999999999999 ¨;	i/:@denominator_units[ "hueo;;["deg;@;"-0.857deg;f-0.85699999999999998 Å;	i/;[ "saturationo;;["%;@;"-1.63%;f-1.6299999999999999 Æ;	i/;[ ;[o;	;@;"bg-color;	i/;"bg_coloro:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"adjust-color;	i0;{"lightnesso;;["%;@;"0.392%;f0.39200000000000002 J;	i0;[ "hueo;;["deg;@;"0.158deg;f0.158 M”;	i0;[ "saturationo;;["%;@;"-1.21%;f-1.21 è\;	i0;[ ;[o;	;@;"bg-color;	i0;"bg_coloro;;["%;@;"45%;i2;	i0;[ ;	i/o;	; ;!;@;[o;
+;@;"adjust-color;	i1;{"lightnesso;;["%;@;"-7.647%;f-7.6470000000000002 J;	i1;[ "hueo;;["deg;@;"1.154deg;f1.1539999999999999 X;	i1;[ "saturationo;;["%;@;"0.607%;f0.60699999999999998 Å;	i1;[ ;[o;	;@;"bg-color;	i1;"bg_coloro;;["%;@;"46%;i3;	i1;[ ;	i0o;	; ;!;@;[o;
+;@;"adjust-color;	i2;{"lightnesso;;["%;@;"-7.647%;f-7.6470000000000002 J;	i2;[ "hueo;;["deg;@;"1.154deg;f1.1539999999999999 X;	i2;[ "saturationo;;["%;@;"0.607%;f0.60699999999999998 Å;	i2;[ ;[o;	;@;"bg-color;	i2;"bg_coloro;;["%;@;"50%;i7;	i2;[ ;	i1o;	; ;!;@;[o;
+;@;"adjust-color;	i3;{"lightnesso;;["%;@;"-4.706%;f-4.7060000000000004 Ám;	i3;[ "hueo;;["deg;@;"1.444deg;f1.444 »¥;	i3;[ "saturationo;;["%;@;"-1.136%;f-1.1359999999999999 ì;	i3;[ ;[o;	;@;"bg-color;	i3;"bg_coloro;;["%;@;"51%;i8;	i3;[ ;	i2o;	;@;"bg-color;	i4;"bg_color:@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i):@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i);{ ;[o;	;@;"direction;	i);"directiono;
+;@;"color_stops;	i);{ ;[o:Sass::Script::Color	:@attrs{	:redi:
+alphai:
+greeniı:	bluei˙;@;0;	i)o:Sass::Script::List	:@separator:
+space;@;[o;	;{	;i⁄;i;iÊ; iÙ;@;0;	i)o:Sass::Script::Number:@numerator_units["%;@:@original"2%;i;	i):@denominator_units[ ;	i)o;	;{	;iŒ;i;i›; iÔ;@;0;	i):@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i':@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i';{ ;[o;	;@;"direction;	i';"directiono;
+;@;"color_stops;	i';{ ;[o;
+;@;"darken;	i';{ ;[o;	;@;"bg-color;	i';"bg_coloro:Sass::Script::Number:@numerator_units["%;@:@original"6%;i;	i':@denominator_units[ o;
+;@;"lighten;	i';{ ;[o;	;@;"bg-color;	i';"bg_coloro;;["%;@;"4%;i	;	i';[ :@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i%:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i%;{ ;[o;	;@;"direction;	i%;"directiono;
+;@;"color_stops;	i%;{ ;[o;
+;@;"lighten;	i%;{ ;[o;	;@;"bg-color;	i%;"bg_coloro:Sass::Script::Number:@numerator_units["%;@:@original"3%;i;	i%:@denominator_units[ o;
+;@;"darken;	i%;{ ;[o;	;@;"bg-color;	i%;"bg_coloro;;["%;@;"4%;i	;	i%;[ :@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i#:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i#;{ ;[o;	;@;"direction;	i#;"directiono;
+;@;"color_stops;	i#;{ ;[	o;
+;@;"darken;	i#;{ ;[o;	;@;"bg-color;	i#;"bg_coloro:Sass::Script::Number:@numerator_units["%;@:@original"10%;i;	i#:@denominator_units[ o:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"darken;	i#;{ ;[o;	;@;"bg-color;	i#;"bg_coloro;;["%;@;"5%;i
+;	i#;[ o;;["%;@;"10%;i;	i#;[ ;	i#o;	; ;!;@;[o;	;@;"bg-color;	i#;"bg_coloro;;["%;@;"65%;iF;	i#;[ ;	i#o;
+;@;"lighten;	i#;{ ;[o;	;@;"bg-color;	i#;"bg_coloro;;["%;@;"	0.5%;f0.5;	i#;[ :@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i!:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i!;{ ;[o;	;@;"direction;	i!;"directiono;
+;@;"color_stops;	i!;{ ;[	o;
+;@;"lighten;	i!;{ ;[o;	;@;"bg-color;	i!;"bg_coloro:Sass::Script::Number:@numerator_units["%;@:@original"15%;i;	i!:@denominator_units[ o:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"lighten;	i!;{ ;[o;	;@;"bg-color;	i!;"bg_coloro;;["%;@;"5%;i
+;	i!;[ o;;["%;@;"50%;i7;	i!;[ ;	i!o;	; ;!;@;[o;	;@;"bg-color;	i!;"bg_coloro;;["%;@;"51%;i8;	i!;[ ;	i!o;
+;@;"darken;	i!;{ ;[o;	;@;"bg-color;	i!;"bg_coloro;;["%;@;"5%;i
+;	i!;[ :@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i:@keywords{ :
+@args[o:Sass::Script::Funcall
+;{ ;"linear-gradient;	i;{ ;[o;	;@;"direction;	i;"directiono;
+;@;"color_stops;	i;{ ;[	o;
+;@;"lighten;	i;{ ;[o;	;@;"bg-color;	i;"bg_coloro:Sass::Script::Number:@numerator_units["%;@:@original"15%;i;	i:@denominator_units[ o:Sass::Script::List	:@separator:
+space;@;[o;
+;@;"lighten;	i;{ ;[o;	;@;"bg-color;	i;"bg_coloro;;["%;@;"8%;i;	i;[ o;;["%;@;"30%;i#;	i;[ ;	io;	; ;!;@;[o;	;@;"bg-color;	i;"bg_coloro;;["%;@;"65%;iF;	i;[ ;	io;
+;@;"darken;	i;{ ;[o;	;@;"bg-color;	i;"bg_coloro;;["%;@;"6%;i;	i;[ :@children[ [o:Sass::Tree::MixinNode;{:importero: Sass::Importers::Filesystem:
+@root"o/Users/nickpoulden/Projects/sencha/jsduck/template/resources/sass/../../extjs/resources/themes/stylesheets;"background-image;	i;{ ;[o;
+;{ ;"linear-gradient;	i;{ ;[o;	;@;"direction;	i;"directiono;	;@;"	type;	i;"	type:@children[ 

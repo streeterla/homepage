@@ -1,0 +1,10 @@
+<project name="hausaufgaben" default="compile_and_load" basedir=".">
+
+	<!--=========================
+	   Compile all sources
+	   ========================= -->
+	<target name="compile">
+		<mkdir dir="bin" />
+		<javac srcdir="src" destdir="bin" />
+	</target>
+</project>

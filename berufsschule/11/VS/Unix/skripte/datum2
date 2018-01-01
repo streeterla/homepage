@@ -1,0 +1,2 @@
+set `date`
+echo Heutiges Datum: $2$3$6

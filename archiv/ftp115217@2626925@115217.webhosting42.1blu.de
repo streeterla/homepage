@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+   "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>MARTIN STRASSERS kleine Homepage - Links</title>
+</head>
+<frameset rows="8%,92%">
+
+<frame src="buttons.php" name = "mainlinks">
+
+<frame src="home.php" name = "home">
+<noframes>Bech ghabt </noframes>
+</frameset>
+</html>
+

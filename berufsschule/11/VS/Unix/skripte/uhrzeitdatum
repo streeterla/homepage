@@ -1,0 +1,4 @@
+echo Uhrzeit: `date +%H:%M:%S`
+echo Datum: `date +%d`.`date +%m`.`date +%y`
+echo
+echo `who | wc -l` Benutzer angemeldet

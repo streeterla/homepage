@@ -1,0 +1,1 @@
+function umrechnen(f){ //f ist eine Referenz auf das Formular	var betrag = f.betrag.value;	if (betrag.indexOf(",")!=-1) 	{		betrag = betrag.substring(0, betrag.indexOf(",")) + "." +		betrag.substring(betrag.indexOf(",")+1, betrag.length);	}	if (f.umrechnung[0].checked) {		f.ausgabe.value = betrag / 1.95583;	} 	else 	{		f.ausgabe.value = 1.95583 * betrag;	}}

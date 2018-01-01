@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "Topausbilder"
+AuthUserFile /hp/bo/ac/op/access/.htusers
+
+require valid-user
+

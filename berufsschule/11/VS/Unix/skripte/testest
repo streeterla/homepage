@@ -1,0 +1,3 @@
+set antwort=j
+echo `test $antwort = j`
+echo `test $antwort != j`

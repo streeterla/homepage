@@ -1,0 +1,174 @@
+<html>
+	<head>
+		<!-- Layout -->
+		<link rel="stylesheet" type="text/css" href="css.css">
+		<!-- jQuery -->
+		<script src="javascript/jquery/jquery-2.0.0.min.js"></script>
+		<!-- extjs style and code -->
+		<link type="text/css" href="javascript/ext/ext-4.0.5/resources/css/ext-all.css" rel="stylesheet" />
+		<script src="javascript/ext/ext-4.0.5/ext-all.js"></script>
+		<script>
+			$(document).ready(function()
+			{
+				Ext.create("Ext.form.Panel",
+				{
+					id: "extForm",
+					renderTo: "contact_formular", 
+					xtype: "fieldcontainer",
+					url: "http://www.onlyfree.de/generator/kontakt/formmail2.php",
+					width: 700,
+					title: "Kontaktformular:",
+					draggable: true,
+					standardSubmit: true,
+					buttonAlign: "center",
+					items: [
+					{
+						fieldLabel: "Betreff",
+						xtype: "textfield",
+						name: "subject",
+						grow: true,
+						growMin: 200,
+						allowBlank: false
+					},
+					{
+						fieldLabel: "Name",
+						xtype: "textfield",
+						name: "name",
+						grow: true,
+						growMin: 200,
+						allowBlank: false
+					},
+					{
+						fieldLabel: "Email",
+						xtype: "textfield",
+						name: "email",
+						inputType: "email",
+						grow: true,
+						growMin: 200,
+						allowBlank: false
+					},
+					{
+						fieldLabel: "URL (falls vorhanden)",
+						xtype: "textfield",
+						name: "email",
+						grow: true,
+						growMin: 200,
+						inputType: "url"
+					},
+					{
+						fieldLabel: "Telefon",
+						xtype: "textfield",
+						name: "telefon",
+						grow: true,
+						growMin: 200,
+						inputType: "telephone"
+					},
+					{
+						fieldLabel: "Stra&szlig;e",
+						xtype: "textfield",
+						grow: true,
+						growMin: 200,
+						name: "street"
+					},
+					{
+						fieldLabel: "Ort",
+						xtype: "textfield",
+						grow: true,
+						growMin: 200,
+						name: "ort"
+					},
+					{
+						fieldLabel: "PLZ",
+						xtype: "numberfield",
+						grow: true,
+						growMin: 200,
+						name: "plz",
+						minValue: 00000,
+						maxValue: 99999,
+						regexp: "^[0-9]{5}$"
+					},
+					{
+						fieldLabel: "Alter",
+						xtype: "numberfield",
+						grow: true,
+						growMin: 200,
+						minValue: 0,
+						maxValue: 120,
+						name: "age"
+					},
+					{
+						fieldLabel: "Priorit&auml;t",
+						grow: true,
+						minValue: 0,
+						maxValue: 10,
+						growMin: 200,
+						xtype: "numberfield",
+						step: 1,
+						name: "prio"
+					},
+					{
+						id: "datepicker",
+						xtype: "datefield",
+						grow: true,
+						growMin: 200,
+						name: "datepicker",
+						fieldLabel: "F&auml;llig bis"
+					},
+					{
+						fieldLabel: "Nachricht",
+						xtype: "htmleditor",
+						grow: true,
+						growMin: 200,
+						name: "message",
+						allowBlank: false
+					},
+					{
+						xtype: "hiddenfield",
+						name: "redirect",
+						value: "http://www.onlyfree.de/generator/kontakt/danke.htm"
+					},
+					{
+						xtype: "hiddenfield",
+						name: "admin",
+						value: "gloa.steeter@vr-web.de"
+					}],
+					buttons: [
+					{
+						text: "Abschicken",
+						handler: function()
+						{
+							if(this.up('form').getForm().isValid())
+							{
+								console.debug("abgeschickt");
+								this.up('form').getForm().submit();
+							}
+						}
+					},
+					{
+						text: "Zur&uuml;cksetzen",
+						handler: function()
+						{
+							console.debug("reset");
+							this.up('form').getForm().reset();
+						}
+					}],
+					keys: [
+					{ 
+						key: [Ext.EventObject.ENTER], 
+						handler: function() 
+						{
+							console.debug("abgeschickt");
+							this.up('form').getForm().submit();
+						}		
+					}],
+					dock: "left"
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<!--formular-->
+		<div id="contact_formular">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+	<head>
+	  <script type="text/javascript" src="jquery-1.6.3.min.js"></script> 
+	  <script type="text/javascript" src="jquery.socialshareprivacy.js"></script>
+	  <script type="text/javascript">
+		jQuery(document).ready(function($){
+		  if($('#socialshareprivacy').length > 0){
+			$('#socialshareprivacy').socialSharePrivacy({
+				services: {
+					twitter : {
+						'display_name' : 'Mein Google Plus'
+					},
+					facebook : {
+						'status' : 'on',
+						'dummy_img' : 'socialshareprivacy/images/dummy_facebook_en.png',
+						'txt_fb_on' : 'Share on Facebook'
+					},
+					gplus : {
+						'dummy_img' : 'socialshareprivacy/images/dummy_gplus.png'
+					}
+				}
+			}); exi
+		  }
+		});
+	  </script>
+	</head>
+	<body>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	  <p>&nbsp;</p>
+	  <p>anfang</p>
+	  <div id="socialshareprivacy"></div>
+	  <p>ende</p>
+	</body>
+</html>

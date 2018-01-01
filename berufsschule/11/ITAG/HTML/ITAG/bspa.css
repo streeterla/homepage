@@ -1,0 +1,41 @@
+body { font-family:Verdana; background-color:#e7f3f7; }
+li { display:inline; }
+a:visited {color:yellow; }
+a:link {color: white; }
+
+h1 {color:#66FFFF; margin-left:50px; text-align:left; }
+h2 {color:#66FFFF; text-align:left; margin-left:40px;}
+h3 {color:#66FFFF; text-align:left; margin-left:40px;}
+span {color:black; background-color:white; }
+
+#banner {background: black url('image/blume.jpg') no-repeat 0 0; color: white; font-size:54px; text-align:right; height:64px;}
+
+#navigation {background-color:#287635; text-align:right; }
+
+#navigation ul {margin: 0;  padding: 5px 0 5px 0;}
+
+#navigation li {border-left:1px solid white; padding: 5px 10px 5px 10px; }
+
+#navigation li a {text-decoration:none}
+#navigation li a:hover {text-decoration:underline}
+
+
+#main {background-color: white; text-align:left; border-width:thin; margin-left:150px; margin-right:150px; }
+
+#subnav {float:right; width: 26%; padding-top:120px; border-left:1px solid #cccccc; border-top:1px solid #cccccc;}
+
+#subnav img {float:right; padding: 10px;}
+
+#subnav a:link {color:black;}
+#subnav a:visited {color:#CC33FF;}
+
+#subnav dt {padding-left: 10px; border-top:1px solid #cccccc; font-weight:bold;}
+#subnav dd {margin-left:0;}
+#subnav {padding-bottom:10px;}
+
+
+#footer{clear:both}
+
+#willkommen {padding-right:30%}
+#willkommen img {float:left; margin: 10px;} 
+.rechts {float:right; padding: 10px;}

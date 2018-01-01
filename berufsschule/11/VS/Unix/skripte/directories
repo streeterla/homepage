@@ -1,0 +1,2 @@
+echo Aktuelles Directory: `pwd`
+echo Anzahl der Subdirectories: `ls -a | grep ^d | wc -l`

@@ -1,0 +1,2 @@
+echo Anzahl Directorys: `ls -l | grep ^d | wc -l`
+echo Anzahl Dateien: `ls -l | grep ^- | wc -l`

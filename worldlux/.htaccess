@@ -1,0 +1,8 @@
+# .streeter.at
+AddDefaultCharset UTF-8
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /worldlux/nozycoreki.php?q=$1 [L]
+</IfModule>

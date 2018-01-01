@@ -1,0 +1,23 @@
+AuthType Basic
+AuthName "Berufsschul-Unterlagen"
+AuthUserFile /hp/bo/ac/op/access/.htusers
+Require user bs travian inteco ichwillein
+
+Options Indexes
+AddDescription "HTML-File" .html
+AddDescription "jpg-Pic" .jpg 
+AddDescription "Registry-File" .reg 
+AddDescription "Word-File" .doc
+AddDescription "PDF-File" .pdf
+AddDescription "Java Source File" .java
+AddDescription "Java Binary File" .class
+AddDescription "Property-File" .properties
+AddDescription "Log-File" .log
+AddDescription "OpenOffice-File" .odt
+AddDescription "CPP Source File" .cpp
+AddDescription "ZIP Archive" .zip
+AddDescription "CSS-File" .css
+AddDescription "JavaScript Source File" .js
+
+
+

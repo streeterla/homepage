@@ -1,0 +1,6 @@
+echo Bitte erste Zahl eingeben:
+read zahl1
+echo Bitte zweite Zahl eingeben:
+read zahl2
+
+echo Das Ergebnis lautet: `expr $zahl1 + $zahl2`

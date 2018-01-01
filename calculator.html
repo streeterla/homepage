@@ -1,0 +1,11 @@
+<!-- calculating function -->
+<script src="javascript/calculate.js"></script>
+<h2><u>W&auml;hrungsrechner zwischen Euro und DM:</u></h2>
+<form>
+	<input type="number" name="betrag" /><br />
+	<input type="radio" name="umrechnung" value="DMEUR" checked="checked" /> DM nach Euro | 
+	<input type="radio" name="umrechnung" value="EURDM" /> Euro nach DM<br />
+	<input type="button" value="Umrechnen!"
+	onclick="umrechnen(this.form)" />
+	<input type="text" name="ausgabe" />
+</form>

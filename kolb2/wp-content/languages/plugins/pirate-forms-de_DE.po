@@ -1,0 +1,440 @@
+# Translation of Development (trunk) in German
+# This file is distributed under the same license as the Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-01-04 11:29:21+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
+"Project-Id-Version: Development (trunk)\n"
+
+#: inc/widget.php:79
+msgid "Title:"
+msgstr "Titel:"
+
+#: inc/widget.php:83
+msgid "Subtext:"
+msgstr "Untertext:"
+
+#: inc/widget.php:75
+msgid "Title"
+msgstr "Titel"
+
+#: inc/settings.php:562
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+#: inc/settings.php:424
+msgid "Options"
+msgstr "Einstellungen"
+
+#: inc/settings.php:289
+msgid "SMTP Port"
+msgstr "SMTP Port"
+
+#: inc/settings.php:283
+msgid "SMTP Host"
+msgstr "SMTP Host"
+
+#: inc/settings.php:110
+msgid "Should form submission IP and email addresses be compared against the Comment Blacklist, found in"
+msgstr "Sollen die mit dem Formular übermittelte IP- und E-Mail-Adresse mit der Blacklist für Kommentare verglichen werden, die unter "
+
+#: inc/settings.php:248
+msgid "Enter your name"
+msgstr "Gib deinen Namen ein"
+
+#: inc/settings.php:239 inc/settings.php:427
+msgid "Messages"
+msgstr "Nachrichten"
+
+#: inc/settings.php:216
+msgid "Your Email"
+msgstr "Deine E-Mail"
+
+#: inc/settings.php:137 inc/settings.php:149 inc/settings.php:161
+#: inc/settings.php:173
+msgid "Required"
+msgstr "Erforderlich"
+
+#: inc/settings.php:136 inc/settings.php:148 inc/settings.php:160
+#: inc/settings.php:172
+msgid "Yes but not required"
+msgstr "Ja, aber nicht erforderlich"
+
+#: inc/settings.php:130 inc/settings.php:207
+msgid "Name"
+msgstr "Name"
+
+#: inc/settings.php:123 inc/settings.php:425
+msgid "Fields"
+msgstr "Felder"
+
+#: inc/settings.php:62 inc/settings.php:66
+msgid "Send Message"
+msgstr "Nachricht senden"
+
+#: pirate-forms.php:717
+msgid "Contacts from Pirate Forms"
+msgstr "Kontakte von Pirate Forms"
+
+#: pirate-forms.php:713
+msgid "No contacts found in Trash."
+msgstr "Keine Kontakte gefunden im Papierkorb."
+
+#: pirate-forms.php:712
+msgid "No contacts found."
+msgstr "Keine Kontakte gefunden."
+
+#: pirate-forms.php:710
+msgid "Search Contacts"
+msgstr "Suche Kontakte"
+
+#: pirate-forms.php:709
+msgid "All Contacts"
+msgstr "Alle Kontakte"
+
+#: pirate-forms.php:707
+msgid "Edit Contact"
+msgstr "Kontakt bearbeiten"
+
+#: pirate-forms.php:705
+msgid "Add New Contact"
+msgstr "Neuen Kontakt hinzufügen"
+
+#: pirate-forms.php:438 pirate-forms.php:451
+msgid "Wrong reCAPTCHA"
+msgstr "Falsche reCAPTCHA"
+
+#: pirate-forms.php:346
+msgid "Nonce failed!"
+msgstr "Nonce fehlgeschlagen!"
+
+#: pirate-forms.php:306
+msgid "Referring page"
+msgstr "Verweisende Seite"
+
+#: inc/settings.php:423
+msgid "How to use"
+msgstr "Anleitung"
+
+#: pirate-forms.php:739
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: inc/helpers.php:16
+msgid "Sorry, an error occured."
+msgstr "Entschuldigung, es ist ein Fehler aufgetreten."
+
+#: inc/settings.php:90
+msgid "Contact notification sender email"
+msgstr "E-Mail-Adresse des Absenders für Kontaktbenachrichtigung"
+
+#: inc/settings.php:97
+msgid "Contact submission recipients"
+msgstr "Empfänger von Kontakt-Anfragen"
+
+#: inc/settings.php:98
+msgid "Email address(es) to receive contact submission notifications. You can separate multiple emails with a comma."
+msgstr "E-Mail-Adresse(n), die Benachrichtigungen zu Kontakt-Anfragen erhalten sollen. Du kannst mehrere E-Mails mit Komma trennen."
+
+#: inc/settings.php:103
+msgid "Store submissions in the database"
+msgstr "Anfragen in der Datenbank speichern"
+
+#: inc/settings.php:104
+msgid "Should the submissions be stored in the admin area? If chosen, contact form submissions will be saved in Contacts on the left (appears after this option is activated)."
+msgstr "Sollen Anfragen im Admin-Bereich gespeichert werden? Wenn ja, werden Anfragen über das Kontaktformular links unter Kontakte gespeichert (erscheint nachdem die Option aktiviert wird)."
+
+#: inc/settings.php:109
+msgid "Use the comments blacklist to restrict submissions"
+msgstr "Verwende zur Eindämmung von Anfragen die Blacklist für Kommentare"
+
+#: inc/settings.php:110
+msgid "wp-admin > Settings > Discussion > Comment Blacklist?"
+msgstr "wp-admin > Einstellungen > Diskussion > Kommentar-Blacklist zu finden ist?"
+
+#: inc/settings.php:115
+msgid "Send email confirmation to form submitter"
+msgstr "Bestätigungs-Mail an den Absender des Formulars senden"
+
+#: inc/settings.php:116
+msgid "Adding text here will send an email to the form submitter. The email uses the \"Text to show when form is submitted...\" field below as the subject line. Plain text only here, no HTML."
+msgstr "Wird hier Text hinzugefügt, wird dem Absender des Formulars eine E-Mail geschickt. Die E-Mail verwendet den \"Text, der angezeigt werden soll, nachdem das Formular abgeschickt wurde …\" aus dem Feld unten als Betreffzeile. Nur einfacher Text, kein HTML."
+
+#: inc/settings.php:131
+msgid "Do you want the name field to be displayed?"
+msgstr "Möchtest du, dass das Namensfeld angezeigt wird?"
+
+#: inc/settings.php:142
+msgid "Email address"
+msgstr "E-Mail-Adresse"
+
+#: inc/settings.php:143
+msgid "Do you want the email address field be displayed?"
+msgstr "Möchtest du, dass das E-Mail-Adressfeld angezeigt wird?"
+
+#: inc/settings.php:154 inc/settings.php:219 inc/settings.php:222
+msgid "Subject"
+msgstr "Betreff"
+
+#: inc/settings.php:155
+msgid "Do you want the subject field be displayed?"
+msgstr "Möchtest du, dass das Betreff-Feld angezeigt wird?"
+
+#: inc/settings.php:166 inc/settings.php:225
+msgid "Message"
+msgstr "Nachricht"
+
+#: inc/settings.php:178
+msgid "Add a reCAPTCHA"
+msgstr "reCAPTCHA hinzufügen"
+
+#: inc/settings.php:185
+msgid "Site key"
+msgstr "Website-Key"
+
+#: inc/settings.php:186
+msgid "to get the Site key and the Secret key for the reCaptcha."
+msgstr "um einen Website-Key und einen Geheim-Key für das reCaptcha zu erhalten."
+
+#: inc/settings.php:192
+msgid "Secret key"
+msgstr "Geheim-Key"
+
+#: inc/settings.php:201 inc/settings.php:426
+msgid "Labels"
+msgstr "Formularfeld-Beschriftungen"
+
+#: inc/settings.php:210
+msgid "Your Name"
+msgstr "Dein Name"
+
+#: inc/settings.php:213
+msgid "Email"
+msgstr "E-Mail"
+
+#: inc/settings.php:228
+msgid "Your message"
+msgstr "Deine Nachricht"
+
+#: inc/settings.php:231
+msgid "Submit button"
+msgstr "Absende-Button"
+
+#: inc/settings.php:245
+msgid "Name required and missing"
+msgstr "Ein Name ist erforderlich und fehlt"
+
+#: inc/settings.php:251
+msgid "E-mail required and missing"
+msgstr "Eine E-Mail-Adresse ist erforderlich und fehlt"
+
+#: inc/settings.php:254
+msgid "Enter a valid email"
+msgstr "Gib eine gültige E-Mail-Adresse ein"
+
+#: inc/settings.php:257
+msgid "Subject required and missing"
+msgstr "Ein Betreff ist erforderlich und fehlt"
+
+#: inc/settings.php:263
+msgid "Question/comment is missing"
+msgstr "Frage/Kommentar fehlt"
+
+#: inc/settings.php:266
+msgid "Enter your question or comment"
+msgstr "Gib deine Frage oder Kommentar ein"
+
+#: inc/settings.php:269
+msgid "Successful form submission text"
+msgstr "Text für erfolgreiche Formularübermittlung"
+
+#: inc/settings.php:270
+msgid "This text is used on the page if no \"Thank You\" URL is set above. This is also used as the confirmation email title, if one is set to send out."
+msgstr "Dieser Text wird auf der Seite verwendet, wenn oben keine \"Danke\"-URL festgelegt wurde. Dies wird auch als Titel für die Bestätigungs-Mail verwendet, wenn eingestellt wurde, dass eine versandt wird."
+
+#: inc/settings.php:272
+msgid "Thanks, your email was sent successfully!"
+msgstr "Vielen Dank, deine E-Mail wurde erfolgreich versandt!"
+
+#: inc/settings.php:277
+msgid "Use SMTP to send emails?"
+msgstr "SMTP für den Mail-Versand verwenden?"
+
+#: inc/settings.php:278
+msgid "Instead of PHP mail function"
+msgstr "Anstelle der PHP Mail-Funktion"
+
+#: inc/settings.php:295
+msgid "Use SMTP Authentication?"
+msgstr "Wird eine SMTP-Authentifizierung verwendet?"
+
+#: inc/settings.php:296
+msgid "If you check this box, make sure the SMTP Username and SMTP Password are completed."
+msgstr "Wenn du dieses Option auswählst, vergewissere dich, dass der SMTP-Nutzername und das SMTP-Kennwort vollständig sind."
+
+#: inc/settings.php:301
+msgid "SMTP Username"
+msgstr "SMTP-Nutzername"
+
+#: inc/settings.php:307
+msgid "SMTP Password"
+msgstr "SMTP-Passwort"
+
+#: inc/settings.php:325
+msgid "Pirate Forms settings"
+msgstr "Einstellungen Pirate Forms"
+
+#: inc/settings.php:326 inc/settings.php:418 inc/widget.php:15
+#: inc/widget.php:16
+msgid "Pirate Forms"
+msgstr "Pirate Forms"
+
+#: inc/settings.php:428
+msgid "SMTP"
+msgstr "SMTP"
+
+#: inc/settings.php:435
+msgid "Welcome to Pirate Forms!"
+msgstr "Willkommen bei Pirate Forms!"
+
+#: inc/settings.php:436
+msgid "To get started, just "
+msgstr "Um anzufangen, "
+
+#: inc/settings.php:436
+msgid "you need, hit save and start using the created form."
+msgstr "wie du es brauchst, speichere deine Einstellungen und du kannst das erstellte Formular nutzen."
+
+#: inc/settings.php:440
+msgid "There are 3 ways of using the newly created form:"
+msgstr "Es gibt drei Wege, das neu erstellte Formular zu verwenden:"
+
+#: inc/settings.php:441
+msgid "1. Use the shortcode "
+msgstr "1. Verwende den Shortcode"
+
+#: inc/settings.php:441
+msgid "in any page or post."
+msgstr "in jeder beliebigen Seite oder Beitrag."
+
+#: inc/settings.php:442
+msgid "widget"
+msgstr "Widget hinzu"
+
+#: inc/settings.php:443
+msgid "3. Use the shortcode "
+msgstr "3. Verwende den Shortcode"
+
+#: inc/settings.php:443
+msgid "in the theme's files."
+msgstr "in den Dateien des Themes."
+
+#: inc/widget.php:76
+msgid "Text above form"
+msgstr "Text oberhalb des Formulars"
+
+#: pirate-forms.php:295
+msgid "Contact Referrer"
+msgstr "Kontakt-Referrer"
+
+#: pirate-forms.php:352
+msgid "Form submission failed!"
+msgstr "Formularübermittlung fehlgeschlagen!"
+
+#: pirate-forms.php:357
+msgid "Contact form submission on"
+msgstr "Kontaktformular-Übermittlung an"
+
+#: pirate-forms.php:462
+msgid "Please enter one or more Contact submission recipients"
+msgstr "Bitte gib einen oder mehrere Empfänger für die Kontaktanfrage an"
+
+#: pirate-forms.php:491
+msgid "Form submission blocked!"
+msgstr "Formularübermittlung blockiert!"
+
+#: pirate-forms.php:702
+msgctxt "admin menu"
+msgid "Contacts"
+msgstr "Kontakte"
+
+#: pirate-forms.php:703
+msgctxt "add new on admin bar"
+msgid "Contact"
+msgstr "Kontakte"
+
+#: pirate-forms.php:704
+msgctxt "contact"
+msgid "Add New"
+msgstr "Hinzufügen"
+
+#: pirate-forms.php:706
+msgid "New Contact"
+msgstr "Neuer Kontakt"
+
+#: pirate-forms.php:700
+msgctxt "post type general name"
+msgid "Contacts"
+msgstr "Kontakte"
+
+#: pirate-forms.php:701
+msgctxt "post type singular name"
+msgid "Contact"
+msgstr "Kontakt"
+
+#: pirate-forms.php:708
+msgid "View Contact"
+msgstr "Kontakt ansehen"
+
+#: pirate-forms.php:711
+msgid "Parent Contacts:"
+msgstr "Elternelement Kontakte:"
+
+#. Plugin Name of the plugin/theme
+msgid "Pirate Forms - Contact form and SMTP Plugin"
+msgstr "Pirate Forms – Kontaktformular- und SMTP-Plugin"
+
+#. Plugin URI of the plugin/theme
+msgid "http://themeisle.com/plugins/pirate-forms/"
+msgstr "http://themeisle.com/plugins/pirate-forms/"
+
+#. Author URI of the plugin/theme
+msgid "http://themeisle.com"
+msgstr "http://themeisle.com"
+
+#. Description of the plugin/theme
+msgid "Easily creates a nice looking, simple contact form on your WP site."
+msgstr "Erzeugt ganz leicht auf deiner WP Website ein hübsch aussehendes, einfaches Kontaktformular."
+
+#: inc/settings.php:436
+msgid "configure all the options "
+msgstr "stelle alles so ein, "
+
+#: inc/settings.php:442
+msgid "2. Add a "
+msgstr "2. Füge ein "
+
+#: inc/settings.php:84
+msgid "Form processing options"
+msgstr "Einstellungen zur Formularverarbeitung"
+
+#: inc/settings.php:135 inc/settings.php:147 inc/settings.php:159
+#: inc/settings.php:171
+msgid "None"
+msgstr "Nichts"
+
+#: inc/settings.php:186
+msgid "Create an account here "
+msgstr "Erstelle hier ein Account "
+
+#: inc/settings.php:260
+msgid "Please enter a subject"
+msgstr "Gib bitte einen Betreff ein"
+
+#. Author of the plugin/theme
+msgid "Themeisle"
+msgstr "Themeisle"

@@ -1,0 +1,9 @@
+
+# BEGIN Site_security
+<IfModule mod_rewrite.c> 
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^vegas/(.*)$ vegas.php?q=$1 [L]
+</IfModule>
+# END Site_security

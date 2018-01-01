@@ -1,0 +1,124 @@
+<!Doctype html>
+<html manifest="cache-manifest.manifest">
+	<head>
+		<meta charset="utf-8">
+		<title>To-Do-Listen-App</title>
+	</head>
+	<body>
+		<script type="application/x-javascript">
+			applicationCache.addEventListener("checking", function()
+			{
+				console.log("Suche Manifest...");
+			}, false);
+			applicationCache.addEventListener("noupdate", function()
+			{
+				console.log("Nichts neues im Manifest gefunden...");
+			}, false);
+			applicationCache.addEventListener("downloading", function()
+			{
+				console.log("Lade Manifest und Ressourcen...");
+			}, false);
+			applicationCache.addEventListener("progress", function()
+			{
+				console.log("Lade Ressourcen...");
+			}, false);
+			applicationCache.addEventListener("cached", function()
+			{
+				console.log("Application Cache bereit...");
+			}, false);
+			applicationCache.addEventListener("updateready", function()
+			{
+				console.log("Cache aktualisiert...");
+			}, false);
+			applicationCache.addEventListener("obsolete", function()
+			{
+				console.log("Cache veraltet...");
+			}, false);
+			applicationCache.addEventListener("error", function()
+			{
+				console.log("Fataler Fehler beim Anlegen des Caches...");
+			}, false);
+			
+			function sendRequest(query, callback)
+			{
+				var request = new XMLHttpRequest();
+				request.open("get", query, true);
+				request.send(null)
+				request.onreadystatechange = function()
+				{
+					if(request.status == 200 && request.readyState == 4)
+					{
+						callback(request.responseText);
+					}
+				};
+			}
+				var date = document.getElementById("todoDate");
+				var todo = document.getElementById("todoTodo");
+				var save = document.getElementById("todoSubmit");
+				var list = document.getElementById("list");
+				
+			function addTodo(text)
+			{
+				var li = docucment.createElement("li");
+				li.innerHTML = text;
+				list.appendChild(li);
+			}
+			
+			sendRequest("read.php", function(response)
+			{
+				var items = response.split(";");
+				for (var i=0; i < items.length; i++)
+				{
+					addTodo(items[i]);
+				}
+			});
+		
+			function addEvent(element, type, func)
+			{
+				if(document.addEventListener)
+				{
+					element.addEventListener(type, func, false);
+				}
+				else
+				{
+					element.attachEvent("on" + type, func);
+				}
+			}
+			
+			addEvent(save, "click", function()
+			{
+				if(date.value && todo.value)
+				{
+					var requestString = "?q" + escape(date.value + ": " + todo.value);
+					sendRequest("save.php" + requestString, function()
+					{
+						addTodo(date.value + ": " + todo.value);
+						console.log('"' + todo.value + '" auf dem Server gespeichert');
+					});
+				}
+			}, false);
+		</script>
+		<h1>To-Do-Liste</h1>
+		<p>
+			<a href="about.html">&Uuml;ber dieses Beispiel</a>
+		</p>
+		<h2Eintr&auml;ge</h2>
+		<ul id="list">
+		
+		</ul>
+		<form id="new">
+			<h2>Neuer Eintrag</h2>	
+			<p>
+				<label for="todoTodo">Datum:</label>			
+				<input type="date" id="todoDate" />
+			</p>	
+			<p>
+				<label for="todoTodo">Aufgabe</label>	
+				<input type="text" id="todoDate" />
+			</p>
+			<p>
+				<input type="button" value="Speichern" id="todoSubmit" />			
+			</p>
+		</form>
+	</body>
+</html>

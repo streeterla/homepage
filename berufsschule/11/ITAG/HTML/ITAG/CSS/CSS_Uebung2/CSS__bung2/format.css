@@ -1,0 +1,11 @@
+#navi a {text-decoration:none;text-transform:uppercase;font-size:10px;color:black;font-weight:bold;}
+#navi a:hover {color:#66FF33;}
+
+.orange {background-color:#FF6600;}
+
+.content {background-color:#85C519;font-size:10px;}
+.content a {color:white;font-weight:bold;text-decoration:none;}
+.content a:hover {text-decoration:underline;}
+
+body {font-family:Verdana, Arial, Helvetica, sans-serif;}
+h1 {font-size:24px;color:#373737;}

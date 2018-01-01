@@ -1,0 +1,26 @@
+== changelog ==
+= 0.6 =
+* Add compatibility for GP 1.3.40
+
+= 0.5 =
+* Add defaults for mobile typography
+
+(1/28/2016) - 0.4
+* Add footer font size value
+* Add new defaults to prevent notices
+* Remove unnecessary files
+
+----
+
+(8/23/2015) - 0.3
+[*] Adjust typography values to work with GP 1.3.0
+
+----
+
+(6/6/2015) - 0.2
+[*] Fix undefined index errors
+
+----
+
+() - 0.1
+Initial Release

@@ -1,0 +1,14 @@
+case $1 in
+	1) echo Januar;;
+	2) echo Februar;;
+	3) echo Maerz;;
+	4) echo April;;
+	5) echo Mai;;
+	6) echo Juni;;
+	7) echo Juli;;
+	8) echo August;;
+	9) echo September;;
+	10) echo Oktober;;
+	11) echo November;;
+	12) echo Dezember;;
+esac

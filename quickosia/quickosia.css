@@ -1,0 +1,25 @@
+body
+	{
+		background-color:green;
+	}
+	
+#search
+	{
+		margin:10% 40%;
+		text-align:center;
+	}
+#quick
+	{
+		margin: 10% 30%;
+	}
+#impressum
+	{
+		text-align:center;
+		color:white;
+	}
+#erg
+	{
+		margin:10%;
+		width:80%;
+		background-color:white;
+	}

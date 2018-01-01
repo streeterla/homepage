@@ -1,0 +1,32 @@
+{
+    "projectName": "Project Name",
+    "licenseText": "Copyright(c) 2011 Company Name",
+    "builds": [
+        {
+            "name": "Ext with Browser Debug",
+            "target": "ext-env-debug.js",
+            "options": {
+                "debug": true
+            },
+            "files": [ {
+                    "path": "../",
+                    "name": "ext-all-debug.js"
+                },{
+                    "path": "../src/core/src/env/",
+                    "name": "Browser.js"
+                }]
+        },
+        {
+            "name": "Ext with Browser - Production",
+            "target": "ext-env.js",
+            "compress": true,
+            "files": [
+                {
+                    "path": "",
+                    "name": "ext-env-debug.js"
+                }
+            ]
+        }
+    ],
+    "resources": []
+}

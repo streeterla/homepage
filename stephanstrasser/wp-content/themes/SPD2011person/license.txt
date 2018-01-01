@@ -1,0 +1,23 @@
+SPD2011 Wordpress Theme
+
+Quellcode-Urheber: René Prymiak
+
+Der enthaltene Quellcode wird ausschließlich Gliederungen der SPD (Lizenznehmer) zur Verfügung gestellt. Die Nutzung muss im direkten Zusammenhang 
+mit der Parteiarbeit stehen. Eine kommerzielle Nutzung durch Lizenznehmer wird ausgeschlossen, sofern diese nicht ausschließlich den Interessen der 
+Partei bzw. ihren Gliederungen nützt. 
+Der Lizenznehmer ist berechtigt Änderungen am Quellcode vorzunehmen. Diese Lizenz überträgt sich automatisch auf den geänderten Quellcode. 
+Der Lizenznehmer ist dazu verpflichtet Änderungen im Quellcode auf Anfrage durch den Lizenzgeber oder andere Lizenznehmer weiterzugeben. 
+Die Verwendung des Quellcodes oder Teilen des Quellcodes, sofern diese nicht unter anderen Lizenzen verfügbar sind, 
+als Teil anderer Quellcodes ist untersagt.
+
+
+
+
+weitere Urheber: Parteivorstand der Sozial-Demokratischen Partei (SPD) Deutschland
+
+Alle grafischen Gestaltungselemente sind - sofern nicht ein anderer Urheberrechtsinhaber (beziehungsweise Verwertungsberechtigter) angegeben ist - 
+für den SPD-Parteivorstand urheberrechtlich geschützt. Jede Verwertung ohne Zustimmung des SPD-Parteivorstandes ist unzulässig. 
+Der SPD-Parteivorstand erteilt seine Zustimmung zur Verwertung der urheberrechtsrelevanten Elemente für die Gestaltung der Internetseiten 
+der regionalen Gliederungen der SPD, soweit kein gekennzeichneter Urheberrechtsvermerk zugunsten eines Dritten besteht. 
+Soweit als Urheberrechtsinhaber (beziehungsweise Verwertungsberechtigter) ein Dritter angegeben ist, müssen die Verwertungsrechte vor 
+entsprechender Nutzung von diesem erworben werden.

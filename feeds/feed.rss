@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+ 
+<rss version="2.0">
+ 
+  <channel>
+    <title>streeter.at feeds</title>
+    <link>http://www.streeter.at</link>
+    <description>Feeds der Seite streeter.at</description>
+    <language>de-de</language>
+    <copyright>Martin Strasser</copyright>
+    <pubDate>Sat, 21 Jan 2012 17:58:59</pubDate>
+    <image>
+      <url>http://www.streeter.at/feeds/banner.jpg</url>
+      <title>streeter banner</title>
+      <link>http://www.streeter.at</link>
+    </image>
+ 
+    <item>
+      <title>Erster Feed</title>
+      <description>Ab sofort gibt es Feeds auf streeter.at</description>
+      <link>http://www.streeter.at</link>
+      <author>Martin Strasser, feed@streeter.at</author>
+      <guid>1</guid>
+      <pubDate>Sat, 21 Jan 2012 17:58:59</pubDate>
+    </item>
+	
+  </channel>
+  <channel>
+	
+	<title>streeter.at feeds</title>
+    <link>http://www.streeter.at</link>
+    <description>Feeds der Seite streeter.at</description>
+    <language>de-de</language>
+    <copyright>Martin Strasser</copyright>
+    <pubDate>Sat, 21 Jan 2012 17:58:59</pubDate>
+    <image>
+      <url>http://www.streeter.at/feeds/banner.jpg</url>
+      <title>streeter banner</title>
+      <link>http://www.streeter.at</link>
+    </image>
+    <item>
+      <title>Sitemap</title>
+      <description>streeter.at verfügt jetzt über eine sitemap</description>
+      <link>http://www.streeter.at</link>
+      <author>Martin Strasser, feed@streeter.at</author>
+      <guid>2</guid>
+      <pubDate>Tue, 24 Jan 2012 21:01:59</pubDate>
+    </item>
+ 
+    <!--item>
+      ...
+    </item-->
+ 
+  </channel>
+</rss>
+ 
+</rss>

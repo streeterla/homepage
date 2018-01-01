@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<user>
+	<account>
+		<name>Strasser</name>
+		<vorname>Martin</vorname>
+		<login>streeter</login>
+		<passwort>fordka</passwort>
+	</account>
+	<account>
+		<name>Attenberger</name>
+		<vorname>Monika</vorname>
+		<login>silly-bungler</login>
+		<passwort>toyotayaris</passwort>
+	</account>
+	<account>
+		<name>Schneider</name>
+		<vorname>Jonathan</vorname>
+		<login>joni</login>
+		<passwort>franzose</passwort>
+	</account>
+	<account>
+		<name>Kreitner</name>
+		<vorname>Schos</vorname>
+		<login>blub</login>
+		<passwort>blub</passwort>
+	</account>
+</user>
