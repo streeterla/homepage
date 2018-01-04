@@ -51,8 +51,8 @@
 			<br />
 			<a title="Cannibals-Homepage" href="http://www.la-cannibals.de" target="_blank">
 				<img src="pics/Cannibals.JPG" alt="Cannibals" height="50" width="150"></a>
-			<a title="Liveergebnisse der zweiten Eishockeybundesliga" href="http://www.pointstreak.com/prostats/scoreboard.html?leagueid=653&seasonid=14730" target="_blank">
-				<img src="http://www.pointstreak.com/images/psgn/ps_logo.gif" alt="2. Buli-Liveergebnisse" height="50" width="150" border="0"></a>
+			<a title="Eishockeyergebnisse" href="https://www.flashscore.de/eishockey/deutschland/oberliga-sud/" target="_blank">
+				<img src="https://www.flashscore.de/res/_fs/image/logo/flashscore_de.2.png" alt="2. Buli-Liveergebnisse" height="50" width="150" border="0"></a>
 		</div>
 	</div>
 	<div id="inputsearch">
